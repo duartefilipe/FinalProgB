@@ -3,13 +3,10 @@ package br.csi.controller;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import br.csi.modelo.Usuario;
 import br.csi.modelo.dao.UsuarioDao;
 
 @Controller
@@ -35,7 +32,7 @@ public class UsuarioController {
 				retorno = uD.autenticar(login,senha); 
 				System.out.println("RETORNO no CONTROLLER para LOGIN"+retorno);
 				
-				if(retorno != false){
+				if(retorno){
 				        rq.getSession().invalidate();
 				        rq.getSession().setAttribute("usuario", retorno);
 						return "principal";

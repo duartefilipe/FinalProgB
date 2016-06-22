@@ -10,6 +10,8 @@
 </head>
 <body>
 
+	<jsp:useBean id="log" class="br.csi.modelo.dao.NoticiaDao" />
+	<c:set var="noticias" value="${log.getNoticias()}" />
 
 	<nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
@@ -84,7 +86,7 @@
 							<nav class="navbar navbar-default navbar-static-top">
 							<div class="container">
 								<h1 align="center">
-									<b>Avisos  123</b>
+									<b>Avisos  principal</b>
 								</h1>
 								<hr>
 								<c:forEach var="noticias" items="${noticias}">
