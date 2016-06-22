@@ -21,7 +21,11 @@ public class NoticiaController {
 		}else{
 			return "principal";
 		}
-
+	}
+	
+	@RequestMapping("RedCadastra")
+	public String redirect(HttpServletRequest rq) throws ClassNotFoundException{
+		return "CadastrarNoticia";
 	}
 
 }

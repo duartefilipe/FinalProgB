@@ -77,7 +77,7 @@
 							<a href="MVC?logica=RedirecionaSalas" class="list-group-item"> Localização Salas de Aula </a>
 							<a href="#" class="list-group-item"> Certificados Monitoria </a>
 							<a href="#" class="list-group-item"> relatorios </a>
-							<a action="#" class="list-group-item"> Cadastrar Noticia </a>
+							<a href="RedCadastra" class="list-group-item"> Cadastrar Noticia </a>
 						</div>
 					</div>
 

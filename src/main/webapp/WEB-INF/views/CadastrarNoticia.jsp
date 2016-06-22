@@ -5,22 +5,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="resources/css/bootstrap.min.css" rel="stylesheet">
 <title>Departamento de geociências</title>
 </head>
 <body>
 
+	<jsp:useBean id="log" class="br.csi.modelo.dao.NoticiaDao" />
+	<c:set var="noticias" value="${log.getNoticias()}" />
 
 	<nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="index.jsp">Projeto final
+			<a class="navbar-brand" href="index.htm">Projeto final
 				geociências</a>
 		</div>
 
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="index.jsp">inicio</a></li>
+				<li class="active"><a href="index.htm">inicio</a></li>
 				<li><a href="MVC?logica=RedirecionaSobre">Sobre</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Professores<b class="caret"></b></a>
