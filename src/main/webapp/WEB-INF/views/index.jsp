@@ -38,12 +38,11 @@
 					<div id="navbar" class="navbar-collapse collapse">
 						<form action="login" class="navbar-form navbar-right">
 							<div class="form-group">
-								<input class="form-control" type="text" id="nome" name="nome"
+								<input class="form-control" type="text" id="login" placeholder="Nome" name="login"
 									placeholder="Informe o seu nome" />
 							</div>
 							<div class="form-group">
-								<input class="form-control" type="password" id="senha"
-									name="senha" placeholder="Senha" />
+								<input class="form-control" type="password" laceholder="Senha" id="senha" name="senha" />
 							</div>
 							<button type="submit" class="btn btn-success">Logar</button>
 						</form>
