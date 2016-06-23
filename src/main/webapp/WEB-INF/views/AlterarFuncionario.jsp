@@ -74,34 +74,36 @@
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
 								<div class="container">
-									<form action="CadastrarFuncionario" method="post">
+									<form action="AlteraFuncionario" method="post">
 										<div class="form-group">
-											<h2 align="center">Cadastrar Funcionarios</h2>
-												<label for="nome">Nome:</label>
-												<input class="form-control" type="text" id="nome" name="nome"/>
-												<br />
-												<label for="siape">SIAPE:</label>
-												<input class="form-control" type="text" id="siape" name="siape"/>
-												<br />
-												<label for="ramal">Ramal:</label>
-												<input class="form-control" type="text" id="ramal" name="ramal"/>
-												<br />
-												<label for="celular">Celular:</label>
-												<input class="form-control" type="text" id="celular" name="celular"/>
-												<br />
-												<label for="sala">Sala:</label>
-												<input class="form-control" type="text" id="sala" name="sala"/>
-												<br />
-												<label for="cpf">CPF:</label>
-												<input class="form-control" type="text" id="cpf" name="cpf"/>
-												<br />
-												<label for="identidade">Identidade:</label>
-												<input class="form-control" type="text" id="identidade" name="idaentidade"/>
-												<br />
-												<label for="email">Email:</label>
-												<input class="form-control" type="text" id="email" name="email"/>
-												<br />
-												<button class="btn btn-primary" type="submit">Cadastrar</button>
+											<h2 align="center">Alterar Funcionarios</h2>
+										<input class="form-control" type="hidden" name="id" value="${func.id}"/>
+										<label for="nome">Nome:</label>
+										<input class="form-control" type="text" name="nome" value="${func.nome}"/>										
+										<br />
+										<label for="siape">SIAPE:</label>
+										<input class="form-control" type="text" name="siape" value="${func.siape}" />
+										<br />
+										<label for="ramal">Ramal:</label>
+										<input class="form-control" type="text" name="ramal" value="${func.ramal}" />
+										<br />
+										<label for="celular">Celular:</label>
+										<input class="form-control" type="text" name="celular" value="${func.celular}" />
+										<br />
+										<label for="sala">Sala:</label>
+										<input class="form-control" type="text" name="sala" value="${func.sala}" />
+										<br />
+										<label for="cpf">CPF:</label>
+										<input class="form-control" type="text" name="cpf" value="${func.cpf}" />
+										<br />
+										<label for="identidade">Identidade:</label>
+										<input class="form-control" type="text" name="identidade" value="${func.identidade}" />
+										<br />
+										<label for="email">Email:</label>
+										<input class="form-control" type="text" name="email" value="${func.email}" />
+										<br />
+										
+										<button class="btn btn-primary" type="submit">Alterar</button>
 										</div>
 									</form>
 								</div>
@@ -118,32 +120,34 @@
 									<thead>
 										<tr>
 											<h1 align="center">Funcionarios cadastrados</h1>
-											<th class="text-center">Nome</th>
-											<th class="text-center">siape</th>
-											<th class="text-center">ramal</th>
-											<th class="text-center">celular</th>
-											<th classs="text-center">sala</th>
-											<th class="text-center">cpf</th>
-											<th class="text-center">identidade</th>
-											<th class="text-center">email</th>
+												<th class="text-center">Nome</th>
+												<th class="text-center">siape</th>
+												<th class="text-center">ramal</th>
+												<th class="text-center">celular</th>
+												<th class="text-center">sala</th>
+												<th class="text-center">cpf</th>
+												<th class="text-center">identidade</th>
+												<th class="text-center">email</th>
+												<th class="text-center">alterar</th>
+												<th class="text-center">deletar</th>
 										</tr>
 									</thead>
 									<tbody>
 
 										<c:forEach var="funcionarios" items="${funcionarios}">
-											<tr>
-												<td>${funcionarios.nome}</td>
-												<td>${funcionarios.siape}</td>
-												<td>${funcionarios.ramal}</td>
-												<td>${funcionarios.celular}</td>
-												<td>${funcionarios.sala}</td>
-												<td>${funcionarios.cpf}</td>
-												<td>${funcionarios.email}</td>
-												<td>
-												<a href="RedAlteraFunc?id=${funcionarios.id}">Alterar</a>
-												<a href="RemoverFuncionario?id=${funcionarios.id}">Deletar</a></td>
-											</tr>
-										</c:forEach>
+												<tr>
+													<td>${funcionarios.nome}</td>
+													<td>${funcionarios.siape}</td>
+													<td>${funcionarios.ramal}</td>
+													<td>${funcionarios.celular}</td>
+													<td>${funcionarios.sala}</td>
+													<td>${funcionarios.cpf}</td>
+													<td>${funcionarios.identidade}</td>
+													<td>${funcionarios.email}</td>
+													<td><a class="btn btn-success btn-sm glyphicon glyphicon-refresh" href="AlteraFuncionario?id=${funcionarios.id}"></a></td>
+													<td><a class="btn btn-danger  btn-sm btn btn-success btn-sm glyphicon glyphicon-remove" href="RemoverFuncionario?id=${funcionarios.id}"></a></td>
+												</tr>
+											</c:forEach>
 									</tbody>
 								</table>
 

@@ -78,29 +78,30 @@
 								<form action="AlteraProfessor" method="post">
 									<div class="form-group">
 										<h2 align="center">Alterar Professores</h2>
+										<input class="form-control" type="hidden" name="id" value="${prof.id}"/>
 										<label for="nome">Nome:</label>
-										<input class="form-control" type="text" id="nome" name="nome" value="${professores.nome}" />
+										<input class="form-control" type="text" name="nome" value="${prof.nome}"/>										
 										<br />
 										<label for="siape">SIAPE:</label>
-										<input class="form-control" type="text" id="siape" name="siape" value="${professores.siape}" />
+										<input class="form-control" type="text" name="siape" value="${prof.siape}" />
 										<br />
 										<label for="ramal">Ramal:</label>
-										<input class="form-control" type="text" id="ramal" name="ramal" value="${professores.ramal}" />
+										<input class="form-control" type="text" name="ramal" value="${prof.ramal}" />
 										<br />
 										<label for="celular">Celular:</label>
-										<input class="form-control" type="text" id="celular" name="celular" value="${professores.celular}" />
+										<input class="form-control" type="text" name="celular" value="${prof.celular}" />
 										<br />
 										<label for="sala">Sala:</label>
-										<input class="form-control" type="text" id="sala" name="sala" value="${professores.sala}" />
+										<input class="form-control" type="text" name="sala" value="${prof.sala}" />
 										<br />
 										<label for="cpf">CPF:</label>
-										<input class="form-control" type="text" id="cpf" name="cpf" value="${professores.cpf}" />
+										<input class="form-control" type="text" name="cpf" value="${prof.cpf}" />
 										<br />
 										<label for="identidade">Identidade:</label>
-										<input class="form-control" type="text" id="identidade" name="identidade" value="${professores.identidade}" />
+										<input class="form-control" type="text" name="identidade" value="${prof.identidade}" />
 										<br />
 										<label for="email">Email:</label>
-										<input class="form-control" type="text" id="email" name="email" value="${professores.email}" />
+										<input class="form-control" type="text" name="email" value="${prof.email}" />
 										<br />
 										
 										<button class="btn btn-primary" type="submit">Alterar</button>
@@ -125,7 +126,7 @@
 												<th class="text-center">siape</th>
 												<th class="text-center">ramal</th>
 												<th class="text-center">celular</th>
-												<th classs="text-center">sala</th>
+												<th class="text-center">sala</th>
 												<th class="text-center">cpf</th>
 												<th class="text-center">identidade</th>
 												<th class="text-center">email</th>
@@ -147,7 +148,7 @@
 													<td>${professores.email}</td>
 													<td><a
 														class="btn btn-success btn-sm glyphicon glyphicon-refresh"
-														href="RedAlteraProf?id=${professores.id}"></a></td>
+														href="AlteraProfessor?id=${professores.id}"></a></td>
 													<td><a
 														class="btn btn-danger  btn-sm btn btn-success btn-sm glyphicon glyphicon-remove"
 														href="RemoverProfessor?id=${professores.id}"></a></td>

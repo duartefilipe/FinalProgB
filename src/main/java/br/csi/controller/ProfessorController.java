@@ -12,8 +12,8 @@ import br.csi.modelo.dao.ProfessorDao;
 public class ProfessorController {
 	
 	@RequestMapping ("CadastrarProfessor")
-	public String adiciona (Professor professor) throws ClassNotFoundException{
-		boolean retorno = new ProfessorDao().cadastrar(professor);
+	public String adiciona (Professor professor) throws ClassNotFoundException, SQLException{
+		boolean retorno = new ProfessorDao().cadastraProfessor(professor);
 		if(retorno){
 			return "CadastrarProfessor";
 		}else{
@@ -27,29 +27,32 @@ public class ProfessorController {
 			ProfessorDao pD = new ProfessorDao();
 			
 			
-			System.out.println("ID DO PROFESSOR NO DELETA PROFESSOR CONTROLER---"+id);
+			System.out.println("professor :  "+id);
 			
 			boolean retorno = pD.deletarProfessor(id);
 			if(retorno){
 				rq.setAttribute("professores", pD.getProfessores());
 				return "CadastrarProfessor";
 			}else{
-				rq.setAttribute("msg","PROBLEMAS AO EXCLUIR O PROFESSOR");
+				rq.setAttribute("msg","roblema pra excluir");
 				return "erro";
 			}
 		}
 	
 	@RequestMapping("AlteraProfessor")
-	public String AlteraProfessor(Professor p, HttpServletRequest rq) throws NoSuchAlgorithmException, ClassNotFoundException{
+	public String AlteraProfessor(Professor p, HttpServletRequest rq) throws NoSuchAlgorithmException, ClassNotFoundException, SQLException{
 		
 		ProfessorDao pD = new ProfessorDao();
+		 System.out.println("PROFESSOR no ALTERA nomeProfessor---"+p.getNome());
 		
-			boolean retorno = pD.cadastrar(p);
-			System.out.println("AQUI NO Altera professor------------------"+retorno);
+		
+			boolean retorno = pD.alteraProfessor(p);
+			
+			System.out.println("No Altera professor  :   "+retorno);
 			if(retorno){
 				return "CadastrarProfessor";
 			}else{
-				rq.setAttribute("msg","PROBLEMAS AO ALTERAR O PROFESSOR");
+				rq.setAttribute("msg","problemas ao alterar professor");
 				return "erro";
 			}
 	}

@@ -74,6 +74,7 @@
 							<a href="#" class="list-group-item"> relatorios </a>
 							<a href="RedCadastraNot" class="list-group-item"> Cadastrar Noticia </a>
 							<a href="RedCadastraProf" class="list-group-item"> Cadastrar Professor </a>
+							<a href="RedCadastraFunc" class="list-group-item"> Cadastrar Funcionario </a>
 						</div>
 					</div>
 

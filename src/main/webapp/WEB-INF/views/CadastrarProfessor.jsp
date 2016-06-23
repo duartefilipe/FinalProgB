@@ -121,7 +121,7 @@
 											<th class="text-center">siape</th>
 											<th class="text-center">ramal</th>
 											<th class="text-center">celular</th>
-											<th classs="text-center">sala</th>
+											<th class="text-center">sala</th>
 											<th class="text-center">cpf</th>
 											<th class="text-center">identidade</th>
 											<th class="text-center">email</th>
