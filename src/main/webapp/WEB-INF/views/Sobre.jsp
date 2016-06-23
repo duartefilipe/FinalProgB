@@ -9,51 +9,45 @@
 <title>Departamento de geociências</title>
 </head>
 <body>
+
 	<jsp:useBean id="log" class="br.csi.modelo.dao.NoticiaDao" />
 	<c:set var="noticias" value="${log.getNoticias()}" />
+
+	<jsp:useBean id="log1" class="br.csi.modelo.dao.ProfessorDao" />
+	<c:set var="professores" value="${log1.getProfessores()}" />
+
 
 	<nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="index.htm">Projeto final</a>
+			<a class="navbar-brand" href="index.htm">Projeto final
+				geociências</a>
 		</div>
 
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="index.jsp">inicio</a></li>
+				<li class="active"><a href="index.htm">inicio</a></li>
 				<li><a href="RedSobre">Sobre</a></li>
-				<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Professores<b class="caret"></b></a>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">Professores<b class="caret"></b></a>
 					<ul class="dropdown-menu">
+						<li><a href="RedCadastraProf">Cadastrar</a></li>
 						<li><a href="#produto">professor 2</a></li>
+
 					</ul></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Funcionarios<b class="caret"></b></a>
 					<ul class="dropdown-menu">
+						<li><a href="MVC?logica=RedirecionaCadastraFuncionario">Cadastrar</a></li>
 						<li><a href="#produto">funcionario 2</a></li>
 					</ul>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">bolsistas<b class="caret"></b></a>
 					<ul class="dropdown-menu">
+						<li><a href="MVC?logica=RedirecionaCadastraBolsista">Cadastrar</a></li>
 						<li><a href="#produto">bolsista 2</a></li>
 					</ul></li>
 
-				<li>
-					<div id="navbar" class="navbar-collapse collapse">
-						<form action="login" class="navbar-form navbar-right">
-							<div class="form-group">
-								<input class="form-control" type="text" id="login"
-									placeholder="Nome" name="login"
-									placeholder="Informe o seu nome" />
-							</div>
-							<div class="form-group">
-								<input class="form-control" type="password" laceholder="Senha"
-									id="senha" name="senha" />
-							</div>
-							<button type="submit" class="btn btn-success">Logar</button>
-						</form>
-					</div>
-				</li>
 			</ul>
 		</div>
 	</div>
@@ -80,7 +74,8 @@
 								href="MVC?logica=RedirecionaSalas" class="list-group-item">
 								Localização Salas de Aula </a> <a href="#" class="list-group-item">
 								Certificados Monitoria </a> <a href="#" class="list-group-item">
-								relatorios </a>
+								relatorios </a> <a href="RedCadastraNot" class="list-group-item">
+								Cadastrar Noticia </a>
 						</div>
 					</div>
 
@@ -88,19 +83,44 @@
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
 							<div class="container">
-								<h1 align="center">
-									<b>Avisos</b>
-								</h1>
+								<h3 align="center">
+									<b>Sobre o Departamento de Geociências</b>
+								</h3>
 								<hr>
-								<c:forEach var="noticias" items="${noticias}">
-									<div class="thumbnail text text-center">
-										<h2>
-											<b>${noticias.titulo}</b>
-										</h2>
-										<hr>
-										<p align="center">${noticias.texto}</p>
-									</div>
-								</c:forEach>
+
+								<p>
+									O Departamento de Geociências atende a 13 cursos de graduação e
+									a 07 cursos de pós-graduação, totalizando cerca de 660 alunos
+									por semestre. Sua infra-estrutura está composta por 14
+									laboratórios equipados para atender a demanda destes alunos.
+									Possui 22 professores qualificados, sendo 19 doutores e 02
+									mestres. Além disso, possui 05 funcionários.<br> - Chefe:
+									Profª Carmen Rejane Flores Wizniewsky<br> - Subchefe:
+									Prof. Bernardo Sayão Penna e Souza<br> - Secretária: Nilza
+									Doicco<br> - Telefone: (55) 3220-8143 ou 3220-8207<br>
+									- E-mail: nilza.geo@gmail.com<br> - Home-page:
+									www.ufsm.br/depgeo<br> <br> <br> <b>Cursos
+										Atendidos:</b><br> <br> <b>Cursos de Graduação:</b><br>
+									<br> · Agronomia <br> · Arquitetura e Urbanismo<br>
+									· Ciências Biológicas - Licenciatura<br> · Ciências
+									Contábeis <br> · Ciências Sócias - Bacharelado<br> ·
+									Engenharia Civil <br> · Engenharia Florestal<br> ·
+									Geografia - Bacharelado <br> · Geografia - Licenciatura <br>
+									· Meteorologia <br> · Química Bacharelado<br> ·
+									Química Industrial <br> · Química Licenciatura <br> ·
+									Técnico em Geomática<br>
+									<br> <b>Cursos de Pós-Graduação:</b><br>
+									<br> 
+									· Especialização em Geociências <br>
+									· Especialização em Geomática <br>
+									· Mestrado em Biologia <br>
+									· Mestrado em Ciências Biológicas - Biodiversidade Animal<br> 
+									· Mestrado em Engenharia Civil <br>
+									· Mestrado em Geografia<br>
+
+
+								</p>
+
 							</div>
 							</nav>
 						</div>

@@ -12,18 +12,27 @@
 
 	<jsp:useBean id="log" class="br.csi.modelo.dao.NoticiaDao" />
 	<c:set var="noticias" value="${log.getNoticias()}" />
+	
+	<jsp:useBean id="log1" class="br.csi.modelo.dao.ProfessorDao" />
+	<c:set var="professores" value="${log1.getProfessores()}" />
+
 
 	<nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.htm">Projeto final geociências</a>
+		</div>
+
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="index.jsp">inicio</a></li>
-				<li><a href="MVC?logica=RedirecionaSobre">Sobre</a></li>
+				<li><a href="RedSobre">Sobre</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Professores<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="MVC?logica=RedirecionaCadastraProfessor">Cadastrar</a></li>
+						<li><a href="RedCadastraProf">Cadastrar</a></li>
 						<li><a href="#produto">professor 2</a></li>
+		
 					</ul></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Funcionarios<b class="caret"></b></a>
@@ -38,20 +47,6 @@
 						<li><a href="#produto">bolsista 2</a></li>
 					</ul></li>
 
-				<li>
-					<div id="navbar" class="navbar-collapse collapse">
-						<form action="login" class="navbar-form navbar-right">
-							<div class="form-group">
-								<input type="text" placeholder="login" class="form-control">
-							</div>
-							<div class="form-group">
-								<input type="password" placeholder="Senha"
-									class="form-control">
-							</div>
-							<button type="submit" class="btn btn-success">Logar</button>
-						</form>
-					</div>
-				</li>
 			</ul>
 		</div>
 	</div>
@@ -74,10 +69,11 @@
 						<div class="list-group">
 							<a class="list-group-item text text-center" style="background: #E7E7E7"> MENU </a>
 							<a href="#" class="list-group-item"> Formularios </a>
-							<a href="MVC?logica=RedirecionaSalas" class="list-group-item"> Localização Salas de Aula </a>
+							<a href="#" class="list-group-item"> Localização Salas de Aula </a>
 							<a href="#" class="list-group-item"> Certificados Monitoria </a>
 							<a href="#" class="list-group-item"> relatorios </a>
-							<a href="RedCadastra" class="list-group-item"> Cadastrar Noticia </a>
+							<a href="RedCadastraNot" class="list-group-item"> Cadastrar Noticia </a>
+							<a href="RedCadastraProf" class="list-group-item"> Cadastrar Professor </a>
 						</div>
 					</div>
 

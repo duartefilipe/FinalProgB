@@ -73,34 +73,35 @@
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
 								<div class="container">
-									<form action="CadastrarProfessor" method="post">
+									<form action="AlteraProfessor" method="post">
+									<input type="hidden" id="id" name="id" value="${professores.id}" /> <br>
 										<div class="form-group">
-											<h2 align="center">Cadastrar Professores</h2>
+											<h2 align="center">Alterar Professores</h2>
 												<label for="nome">Nome:</label>
-												<input class="form-control" type="text" id="nome" name="nome"/>
+												<input class="form-control" type="text" id="nome" name="nome" value="${professores.nome}"/>
 												<br />
 												<label for="siape">SIAPE:</label>
-												<input class="form-control" type="text" id="siape" name="siape"/>
+												<input class="form-control" type="text" id="siape" name="siape" value="${professores.siape}"/>
 												<br />
 												<label for="ramal">Ramal:</label>
-												<input class="form-control" type="text" id="ramal" name="ramal"/>
+												<input class="form-control" type="text" id="ramal" name="ramal" value="${professores.ramal"/>
 												<br />
 												<label for="celular">Celular:</label>
-												<input class="form-control" type="text" id="celular" name="celular"/>
+												<input class="form-control" type="text" id="celular" name="celular" value="${professores.celular"/>
 												<br />
 												<label for="sala">Sala:</label>
-												<input class="form-control" type="text" id="sala" name="sala"/>
+												<input class="form-control" type="text" id="sala" name="sala" value="${professores.sala"/>
 												<br />
 												<label for="cpf">CPF:</label>
-												<input class="form-control" type="text" id="cpf" name="cpf"/>
+												<input class="form-control" type="text" id="cpf" name="cpf" value="${professores.cpf"/>
 												<br />
 												<label for="identidade">Identidade:</label>
-												<input class="form-control" type="text" id="identidade" name="idaentidade"/>
+												<input class="form-control" type="text" id="identidade" name="identidade" value="${professores.identidade"/>
 												<br />
 												<label for="email">Email:</label>
-												<input class="form-control" type="text" id="email" name="email"/>
+												<input class="form-control" type="text" id="email" name="email" value="${professores.email"/>
 												<br />
-												<button class="btn btn-primary" type="submit">Cadastrar</button>
+												<button class="btn btn-primary" type="submit">Alterar</button>
 										</div>
 									</form>
 								</div>
@@ -141,7 +142,7 @@
 												<td>${professores.cpf}</td>
 												<td>${professores.identidade}</td>
 												<td>${professores.email}</td>
-												<td><a class="btn btn-success btn-sm glyphicon glyphicon-refresh" href="RedAlteraProf?id=${professores.id}"></a></td>
+												<td><a class="btn btn-success btn-sm glyphicon glyphicon-refresh" href="AlterarProfessor?id=${professores.id}"></a></td>
 												<td><a class="btn btn-danger  btn-sm btn btn-success btn-sm glyphicon glyphicon-remove" href="RemoverProfessor?id=${professores.id}"></a></td>
 											</tr>
 										</c:forEach>

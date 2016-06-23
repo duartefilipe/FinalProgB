@@ -23,7 +23,7 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="index.htm">inicio</a></li>
-				<li><a href="MVC?logica=RedirecionaSobre">Sobre</a></li>
+				<li><a href="RedSobre">Sobre</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Professores<b class="caret"></b></a>
 					<ul class="dropdown-menu">

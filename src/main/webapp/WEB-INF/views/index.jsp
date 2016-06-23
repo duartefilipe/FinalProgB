@@ -14,12 +14,16 @@
 
 	<nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.htm">Projeto final</a>
+		</div>
+
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="index.jsp">inicio</a></li>
-				<li><a href="MVC?logica=RedirecionaSobre">Sobre</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Professores<b class="caret"></b></a>
+				<li><a href="RedSobre">Sobre</a></li>
+				<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Professores<b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li><a href="#produto">professor 2</a></li>
 					</ul></li>
@@ -38,11 +42,13 @@
 					<div id="navbar" class="navbar-collapse collapse">
 						<form action="login" class="navbar-form navbar-right">
 							<div class="form-group">
-								<input class="form-control" type="text" id="login" placeholder="Nome" name="login"
+								<input class="form-control" type="text" id="login"
+									placeholder="Nome" name="login"
 									placeholder="Informe o seu nome" />
 							</div>
 							<div class="form-group">
-								<input class="form-control" type="password" laceholder="Senha" id="senha" name="senha" />
+								<input class="form-control" type="password" laceholder="Senha"
+									id="senha" name="senha" />
 							</div>
 							<button type="submit" class="btn btn-success">Logar</button>
 						</form>
