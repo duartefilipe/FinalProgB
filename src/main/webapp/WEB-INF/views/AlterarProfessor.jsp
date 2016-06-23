@@ -11,11 +11,12 @@
 <body>
 	<jsp:useBean id="log" class="br.csi.modelo.dao.ProfessorDao" />
 	<c:set var="professores" value="${log.getProfessores()}" />
-	
+
 	<nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="index.jsp">Projeto final geociências</a>
+			<a class="navbar-brand" href="index.jsp">Projeto final
+				geociências</a>
 		</div>
 
 		<div id="navbar" class="navbar-collapse collapse">
@@ -61,102 +62,108 @@
 					</div>
 					<div class="col-md-3">
 						<div class="list-group">
-							<a href="#" class="list-group-item"> Formularios </a>
-							<a href="#" class="list-group-item"> Localização Salas de Aula </a>
-							<a href="#" class="list-group-item"> Certificados Monitoria </a>
-							<a href="#" class="list-group-item"> relatorios </a>
-							<a href="MVC?logica=RedirecionaCadastrarNoticia#" class="list-group-item">Cadastrar Noticias </a>
+							<a href="#" class="list-group-item"> Formularios </a> <a href="#"
+								class="list-group-item"> Localização Salas de Aula </a> <a
+								href="#" class="list-group-item"> Certificados Monitoria </a> <a
+								href="#" class="list-group-item"> relatorios </a> <a
+								href="MVC?logica=RedirecionaCadastrarNoticia#"
+								class="list-group-item">Cadastrar Noticias </a>
 						</div>
 					</div>
 
 					<div class="col-md-9">
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
-								<div class="container">
-									<form action="AlteraProfessor" method="post">
-									<input type="hidden" id="id" name="id" value="${professores.id}" /> <br>
-										<div class="form-group">
-											<h2 align="center">Alterar Professores</h2>
-												<label for="nome">Nome:</label>
-												<input class="form-control" type="text" id="nome" name="nome" value="${professores.nome}"/>
-												<br />
-												<label for="siape">SIAPE:</label>
-												<input class="form-control" type="text" id="siape" name="siape" value="${professores.siape}"/>
-												<br />
-												<label for="ramal">Ramal:</label>
-												<input class="form-control" type="text" id="ramal" name="ramal" value="${professores.ramal"/>
-												<br />
-												<label for="celular">Celular:</label>
-												<input class="form-control" type="text" id="celular" name="celular" value="${professores.celular"/>
-												<br />
-												<label for="sala">Sala:</label>
-												<input class="form-control" type="text" id="sala" name="sala" value="${professores.sala"/>
-												<br />
-												<label for="cpf">CPF:</label>
-												<input class="form-control" type="text" id="cpf" name="cpf" value="${professores.cpf"/>
-												<br />
-												<label for="identidade">Identidade:</label>
-												<input class="form-control" type="text" id="identidade" name="identidade" value="${professores.identidade"/>
-												<br />
-												<label for="email">Email:</label>
-												<input class="form-control" type="text" id="email" name="email" value="${professores.email"/>
-												<br />
-												<button class="btn btn-primary" type="submit">Alterar</button>
-										</div>
-									</form>
-								</div>
+							<div class="container">
+								<form action="AlteraProfessor" method="post">
+									<div class="form-group">
+										<h2 align="center">Alterar Professores</h2>
+										<label for="nome">Nome:</label>
+										<input class="form-control" type="text" id="nome" name="nome" value="${professores.nome}" />
+										<br />
+										<label for="siape">SIAPE:</label>
+										<input class="form-control" type="text" id="siape" name="siape" value="${professores.siape}" />
+										<br />
+										<label for="ramal">Ramal:</label>
+										<input class="form-control" type="text" id="ramal" name="ramal" value="${professores.ramal}" />
+										<br />
+										<label for="celular">Celular:</label>
+										<input class="form-control" type="text" id="celular" name="celular" value="${professores.celular}" />
+										<br />
+										<label for="sala">Sala:</label>
+										<input class="form-control" type="text" id="sala" name="sala" value="${professores.sala}" />
+										<br />
+										<label for="cpf">CPF:</label>
+										<input class="form-control" type="text" id="cpf" name="cpf" value="${professores.cpf}" />
+										<br />
+										<label for="identidade">Identidade:</label>
+										<input class="form-control" type="text" id="identidade" name="identidade" value="${professores.identidade}" />
+										<br />
+										<label for="email">Email:</label>
+										<input class="form-control" type="text" id="email" name="email" value="${professores.email}" />
+										<br />
+										
+										<button class="btn btn-primary" type="submit">Alterar</button>
+									</div>
+								</form>
+							</div>
 							</nav>
 						</div>
-						
+
 						<!-- teste mostra professores -->
-						
+
 						<div class="thumbnail" align="center">
-						<div class="row">
-							<div class="col-md-12">
-								<section>
-								<table class="text-center table table-bordered table-responsive">
-									<thead>
-										<tr>
-											<h1 align="center">professores cadastrados</h1>
-											<th class="text-center">Nome</th>
-											<th class="text-center">siape</th>
-											<th class="text-center">ramal</th>
-											<th class="text-center">celular</th>
-											<th classs="text-center">sala</th>
-											<th class="text-center">cpf</th>
-											<th class="text-center">identidade</th>
-											<th class="text-center">email</th>
-											<th class="text-center">alterar</th>
-											<th class="text-center">deletar</th>
-										</tr>
-									</thead>
-									<tbody>
-
-										<c:forEach var="professores" items="${professores}">
+							<div class="row">
+								<div class="col-md-12">
+									<section>
+									<table
+										class="text-center table table-bordered table-responsive">
+										<thead>
 											<tr>
-												<td>${professores.nome}</td>
-												<td>${professores.siape}</td>
-												<td>${professores.ramal}</td>
-												<td>${professores.celular}</td>
-												<td>${professores.sala}</td>
-												<td>${professores.cpf}</td>
-												<td>${professores.identidade}</td>
-												<td>${professores.email}</td>
-												<td><a class="btn btn-success btn-sm glyphicon glyphicon-refresh" href="AlterarProfessor?id=${professores.id}"></a></td>
-												<td><a class="btn btn-danger  btn-sm btn btn-success btn-sm glyphicon glyphicon-remove" href="RemoverProfessor?id=${professores.id}"></a></td>
+												<h1 align="center">professores cadastrados</h1>
+												<th class="text-center">Nome</th>
+												<th class="text-center">siape</th>
+												<th class="text-center">ramal</th>
+												<th class="text-center">celular</th>
+												<th classs="text-center">sala</th>
+												<th class="text-center">cpf</th>
+												<th class="text-center">identidade</th>
+												<th class="text-center">email</th>
+												<th class="text-center">alterar</th>
+												<th class="text-center">deletar</th>
 											</tr>
-										</c:forEach>
-									</tbody>
-								</table>
+										</thead>
+										<tbody>
 
-								</section>
+											<c:forEach var="professores" items="${professores}">
+												<tr>
+													<td>${professores.nome}</td>
+													<td>${professores.siape}</td>
+													<td>${professores.ramal}</td>
+													<td>${professores.celular}</td>
+													<td>${professores.sala}</td>
+													<td>${professores.cpf}</td>
+													<td>${professores.identidade}</td>
+													<td>${professores.email}</td>
+													<td><a
+														class="btn btn-success btn-sm glyphicon glyphicon-refresh"
+														href="RedAlteraProf?id=${professores.id}"></a></td>
+													<td><a
+														class="btn btn-danger  btn-sm btn btn-success btn-sm glyphicon glyphicon-remove"
+														href="RemoverProfessor?id=${professores.id}"></a></td>
+												</tr>
+											</c:forEach>
+										</tbody>
+									</table>
+
+									</section>
+								</div>
 							</div>
 						</div>
-					</div>
-						
+
 						<!-- teste mostra professores -->
-						
-						
+
+
 					</div>
 				</div>
 			</div>
@@ -164,8 +171,9 @@
 	</div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="js/bootstrap.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
 </body>
 </html>
 

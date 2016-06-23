@@ -44,8 +44,6 @@ public class ProfessorController {
 		
 		ProfessorDao pD = new ProfessorDao();
 		
-		//u.setSenha(senhaHash);
-		
 			boolean retorno = pD.cadastrar(p);
 			System.out.println("AQUI NO Altera professor------------------"+retorno);
 			if(retorno){

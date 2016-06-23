@@ -95,7 +95,7 @@
 												<input class="form-control" type="text" id="cpf" name="cpf"/>
 												<br />
 												<label for="identidade">Identidade:</label>
-												<input class="form-control" type="text" id="identidade" name="idaentidade"/>
+												<input class="form-control" type="text" id="identidade" name="identidade"/>
 												<br />
 												<label for="email">Email:</label>
 												<input class="form-control" type="text" id="email" name="email"/>

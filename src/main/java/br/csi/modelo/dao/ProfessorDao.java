@@ -5,11 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 import br.csi.modelo.Professor;
+import br.csi.modelo.Usuario;
 import br.csi.util.ConectaBanco;
 
 public class ProfessorDao {
+	
+	
 	// Cadastrar e alterar
 	public boolean cadastrar(Professor prof) throws ClassNotFoundException {
 
@@ -67,7 +69,7 @@ public class ProfessorDao {
 				int identidade = prof.getIdentidade();
 				String email = prof.getEmail();
 
-				String sql = "UPDATE professor SET nome=?, siape=?, ramal=?, celular,?, sala=?, cpf=?, identidade=?, email=? WHERE id=?";
+				String sql = "UPDATE professor SET nome=?, siape=?, ramal=?, celular=?, sala=?, cpf=?, identidade=?, email=? WHERE id=?";
 				PreparedStatement stmt = con.prepareStatement(sql);
 				stmt.setString(1, nome);
 				stmt.setInt(2, siape);
@@ -85,6 +87,7 @@ public class ProfessorDao {
 		}
 		return retorno;
 	}
+	
 
 	public long buscacodigo() throws SQLException, ClassNotFoundException {
 		Connection c = null;
