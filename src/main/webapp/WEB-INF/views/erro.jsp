@@ -20,7 +20,7 @@
 
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="index.jsp">inicio</a></li>
+				<li class="active"><a href="index.htm">inicio</a></li>
 				<li><a href="RedSobre">Sobre</a></li>
 				<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Professores<b class="caret"></b></a>
@@ -74,13 +74,11 @@
 					</div>
 					<div class="col-md-3">
 						<div class="list-group">
-							<a class="list-group-item text text-center"
-								style="background: #E7E7E7"> MENU </a> <a href="#"
-								class="list-group-item"> Formularios </a> <a
-								href="MVC?logica=RedirecionaSalas" class="list-group-item">
-								Localização Salas de Aula </a> <a href="#" class="list-group-item">
-								Certificados Monitoria </a> <a href="#" class="list-group-item">
-								relatorios </a>
+							<a class="list-group-item text text-center" style="background: #E7E7E7"> MENU </a>
+							<a href="#" class="list-group-item"> Formularios </a>
+							<a href="Redlocal" class="list-group-item"> Localização Salas de Aula </a>
+							<a href="#" class="list-group-item"> Certificados Monitoria </a>
+							<a href="#" class="list-group-item"> relatorios </a>
 						</div>
 					</div>
 

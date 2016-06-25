@@ -9,8 +9,8 @@
 <title>Departamento de geociências</title>
 </head>
 <body>
-	<jsp:useBean id="log" class="br.csi.modelo.dao.FuncionarioDao" />
-	<c:set var="funcionarios" value="${log.getFuncionarios()}" />
+	<jsp:useBean id="log" class="br.csi.modelo.dao.BolsistasDao" />
+	<c:set var="bolsistas" value="${log.getBolsistas()}" />
 
 	
 	<nav class="navbar navbar-default navbar-static-top">
@@ -26,13 +26,13 @@
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Professores<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="MVC?logica=RedirecionaCadastraProfessor">Cadastrar</a></li>
+						<li><a href="#">Cadastrar</a></li>
 						<li><a href="#produto">professor 2</a></li>
 					</ul></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Funcionarios<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="MVC?logica=RedirecionaCadastraFuncionario">Cadastrar</a></li>
+						<li><a href="#">Cadastrar</a></li>
 						<li><a href="#produto">funcionario 2</a></li>
 					</ul>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -78,34 +78,29 @@
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
 								<div class="container">
-									<form action="CadastrarFuncionario" method="post">
+									<form action=AlteraBolsista method="post">
 										<div class="form-group">
-											<h2 align="center">Cadastrar Funcionarios</h2>
+											<h2 align="center">Alterar Bolsistas</h2>
+											<input class="form-control" type="hidden" name="id" value="${bol.id}"/>
 												<label for="nome">Nome:</label>
-												<input class="form-control" type="text" id="nome" name="nome"/>
+												<input class="form-control" type="text" name="nome" value="${bol.nome}"/>
 												<br />
-												<label for="siape">SIAPE:</label>
-												<input class="form-control" type="text" id="siape" name="siape"/>
+												<label for="siape">Matricula:</label>
+												<input class="form-control" type="text" name="matricula" value="${bol.matricula}"/>
 												<br />
-												<label for="ramal">Ramal:</label>
-												<input class="form-control" type="text" id="ramal" name="ramal"/>
+												<label for="ramal">Curso:</label>
+												<input class="form-control" type="text" name="curso" value="${bol.curso}"/>
 												<br />
-												<label for="celular">Celular:</label>
-												<input class="form-control" type="text" id="celular" name="celular"/>
+												<label for="celular">Identidade:</label>
+												<input class="form-control" type="text" name="identidade" value="${bol.identidade}"/>
 												<br />
-												<label for="sala">Sala:</label>
-												<input class="form-control" type="text" id="sala" name="sala"/>
+												<label for="sala">Celular:</label>
+												<input class="form-control" type="text" name="celular" value="${bol.celular}"/>
 												<br />
-												<label for="cpf">CPF:</label>
-												<input class="form-control" type="text" id="cpf" name="cpf"/>
+												<label for="cpf">Email:</label>
+												<input class="form-control" type="text" name="email" value="${bol.email}"/>
 												<br />
-												<label for="identidade">Identidade:</label>
-												<input class="form-control" type="text" id="identidade" name="idaentidade"/>
-												<br />
-												<label for="email">Email:</label>
-												<input class="form-control" type="text" id="email" name="email"/>
-												<br />
-												<button class="btn btn-primary" type="submit">Cadastrar</button>
+												<button class="btn btn-primary" type="submit">Alterar</button>
 										</div>
 									</form>
 								</div>
@@ -121,14 +116,12 @@
 								<table class="text-center table table-bordered table-responsive">
 									<thead>
 										<tr>
-											<h1 align="center">Funcionarios cadastrados</h1>
+											<h1 align="center">bolsistas cadastrados</h1>
 											<th class="text-center">Nome</th>
-											<th class="text-center">siape</th>
-											<th class="text-center">ramal</th>
-											<th class="text-center">celular</th>
-											<th classs="text-center">sala</th>
-											<th class="text-center">cpf</th>
+											<th class="text-center">Matricula</th>
+											<th class="text-center">Curso</th>
 											<th class="text-center">identidade</th>
+											<th class="text-center">celular</th>
 											<th class="text-center">email</th>
 											<th class="text-center">alterar</th>
 											<th class="text-center">deletar</th>
@@ -136,18 +129,16 @@
 									</thead>
 									<tbody>
 
-										<c:forEach var="funcionarios" items="${funcionarios}">
+										<c:forEach var="bolsistas" items="${bolsistas}">
 											<tr>
-												<td>${funcionarios.nome}</td>
-												<td>${funcionarios.siape}</td>
-												<td>${funcionarios.ramal}</td>
-												<td>${funcionarios.celular}</td>
-												<td>${funcionarios.sala}</td>
-												<td>${funcionarios.cpf}</td>
-												<td>${funcionarios.identidade}</td>
-												<td>${funcionarios.email}</td>
-												<td><a class="btn btn-success btn-sm glyphicon glyphicon-refresh" href="RedAlteraFunc?id=${funcionarios.id}">Alterar</a></td>
-												<td><a class="btn btn-danger  btn-sm btn btn-success btn-sm glyphicon glyphicon-remove" href="RemoverFuncionario?id=${funcionarios.id}">Deletar</a></td>
+												<td>${bolsistas.nome}</td>
+												<td>${bolsistas.matricula}</td>
+												<td>${bolsistas.curso}</td>
+												<td>${bolsistas.identidade}</td>
+												<td>${bolsistas.celular}</td>
+												<td>${bolsistas.email}</td>
+												<td><a class="btn btn-success btn-sm glyphicon glyphicon-refresh" href="RedAlteraBol?id=${bolsistas.id}"></a></td>
+												<td><a class="btn btn-danger  btn-sm btn btn-success btn-sm glyphicon glyphicon-remove" href="RemoverBolsista?id=${bolsistas.id}"></a></td>
 											</tr>
 										</c:forEach>
 									</tbody>

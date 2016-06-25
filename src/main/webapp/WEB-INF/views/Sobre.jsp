@@ -68,14 +68,11 @@
 					</div>
 					<div class="col-md-3">
 						<div class="list-group">
-							<a class="list-group-item text text-center"
-								style="background: #E7E7E7"> MENU </a> <a href="#"
-								class="list-group-item"> Formularios </a> <a
-								href="MVC?logica=RedirecionaSalas" class="list-group-item">
-								Localização Salas de Aula </a> <a href="#" class="list-group-item">
-								Certificados Monitoria </a> <a href="#" class="list-group-item">
-								relatorios </a> <a href="RedCadastraNot" class="list-group-item">
-								Cadastrar Noticia </a>
+							<a class="list-group-item text text-center" style="background: #E7E7E7"> MENU </a>
+							<a href="#" class="list-group-item"> Formularios </a>
+							<a href="Redlocal" class="list-group-item"> Localização Salas de Aula </a>
+							<a href="#" class="list-group-item"> Certificados Monitoria </a>
+							<a href="#" class="list-group-item"> relatorios </a>
 						</div>
 					</div>
 

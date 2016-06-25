@@ -10,19 +10,19 @@ import br.csi.modelo.Funcionario;
 import br.csi.util.ConectaBanco;
 
 public class FuncionarioDao {
+	
 	public boolean cadastraFuncionario(Funcionario f) throws SQLException{
 		Connection c = null;
 		PreparedStatement stmt = null;
 		boolean retorno = false;
 		
-		
 		String nome = f.getNome();
-		int siape = f.getSiape();
-		int ramal = f.getRamal();
-		int celular = f.getCelular();
+		String siape = f.getSiape();
+		String ramal = f.getRamal();
+		String celular = f.getCelular();
 		String sala = f.getSala();
-		int cpf = f.getCpf();
-		int identidade = f.getIdentidade();
+		String cpf = f.getCpf();
+		String identidade = f.getIdentidade();
 		String email = f.getEmail();
 		
 		try {
@@ -30,12 +30,12 @@ public class FuncionarioDao {
 			String sql="INSERT INTO funcionario (nome,siape,ramal,celular,sala,cpf,identidade,email) values(?,?,?,?,?,?,?,?)";
 			stmt = c.prepareStatement(sql);
 			stmt.setString(1, nome);
-			stmt.setInt(2, siape);
-			stmt.setInt(3, ramal);
-			stmt.setInt(4, celular);
+			stmt.setString(2, siape);
+			stmt.setString(3, ramal);
+			stmt.setString(4, celular);
 			stmt.setString(5, sala);
-			stmt.setInt(6, cpf);
-			stmt.setInt(7, identidade);
+			stmt.setString(6, cpf);
+			stmt.setString(7, identidade);
 			stmt.setString(8, email);
 			
 			stmt.execute();
@@ -59,12 +59,12 @@ public class FuncionarioDao {
 			stmt = c.prepareStatement(sql);
 			
 			stmt.setString(1, f.getNome());
-			stmt.setInt(2, f.getSiape());
-			stmt.setInt(3, f.getRamal());
-			stmt.setInt(4, f.getCelular());
+			stmt.setString(2, f.getSiape());
+			stmt.setString(3, f.getRamal());
+			stmt.setString(4, f.getCelular());
 			stmt.setString(5, f.getSala());
-			stmt.setInt(6, f.getCpf());
-			stmt.setInt(7, f.getIdentidade());
+			stmt.setString(6, f.getCpf());
+			stmt.setString(7, f.getIdentidade());
 			stmt.setString(8, f.getEmail());
 			stmt.setInt(9, f.getId());
 					
@@ -75,7 +75,6 @@ public class FuncionarioDao {
 		
  return retorno;
 }
-
 
 	public long buscacodigo() throws SQLException, ClassNotFoundException {
 		Connection c = null;
@@ -109,12 +108,12 @@ public class FuncionarioDao {
 				func = new Funcionario();
 				func.setId(rs.getInt("id"));
 				func.setNome(rs.getString("nome"));
-				func.setSiape(rs.getInt("siape"));
-				func.setRamal(rs.getInt("ramal"));
-				func.setCelular(rs.getInt("celular"));
+				func.setSiape(rs.getString("siape"));
+				func.setRamal(rs.getString("ramal"));
+				func.setCelular(rs.getString("celular"));
 				func.setSala(rs.getString("sala"));
-				func.setCpf(rs.getInt("cpf"));
-				func.setIdentidade(rs.getInt("identidade"));
+				func.setCpf(rs.getString("cpf"));
+				func.setIdentidade(rs.getString("identidade"));
 				func.setEmail(rs.getString("email"));
 
 				log1.add(func);
@@ -140,23 +139,20 @@ public class FuncionarioDao {
 			while (rs.next()) {
 				func.setId(rs.getInt("id"));
 				func.setNome(rs.getString("nome"));
-				func.setSiape(rs.getInt("siape"));
-				func.setRamal(rs.getInt("ramal"));
-				func.setCelular(rs.getInt("celular"));
+				func.setSiape(rs.getString("siape"));
+				func.setRamal(rs.getString("ramal"));
+				func.setCelular(rs.getString("celular"));
 				func.setSala(rs.getString("sala"));
-				func.setCpf(rs.getInt("cpf"));
-				func.setIdentidade(rs.getInt("identidade"));
+				func.setCpf(rs.getString("cpf"));
+				func.setIdentidade(rs.getString("identidade"));
 				func.setEmail(rs.getString("email"));
-
 			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 		return func;
 	}
-	
 	
 	public Funcionario pesquisaFuncionario(int id ) throws ClassNotFoundException, SQLException{
 		
@@ -176,12 +172,12 @@ public class FuncionarioDao {
 				
 				f.setId(rs.getInt("id"));
 				f.setNome(rs.getString("nome"));
-				f.setSiape(rs.getInt("siape"));
-				f.setRamal(rs.getInt("ramal"));
-				f.setCelular(rs.getInt("celular"));
+				f.setSiape(rs.getString("siape"));
+				f.setRamal(rs.getString("ramal"));
+				f.setCelular(rs.getString("celular"));
 				f.setSala(rs.getString("sala"));
-				f.setCpf(rs.getInt("cpf"));
-				f.setIdentidade(rs.getInt("identidade"));
+				f.setCpf(rs.getString("cpf"));
+				f.setIdentidade(rs.getString("identidade"));
 				f.setEmail(rs.getString("email"));
 				
 				System.out.println("funcionario DAO nome Funcionario----"+f.getNome());
@@ -189,7 +185,6 @@ public class FuncionarioDao {
 		return f;
 	}
 	
-
 	public boolean deletarFuncionario(int id) throws SQLException, Exception {
         boolean deletar = false;
         Connection c = null;

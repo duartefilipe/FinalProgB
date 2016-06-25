@@ -6,7 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import br.csi.modelo.Funcionario;
+import br.csi.modelo.Professor;
 import br.csi.modelo.dao.FuncionarioDao;
+import br.csi.modelo.dao.ProfessorDao;
 
 @Controller
 public class FuncionarioController {
@@ -39,11 +41,11 @@ public class FuncionarioController {
 			}
 		}
 	
-	@RequestMapping("AlteraFuncionlario")
+	@RequestMapping("AlteraFuncionario")
 	public String AlteraFuncionario(Funcionario f, HttpServletRequest rq) throws NoSuchAlgorithmException, ClassNotFoundException, SQLException{
 		
 		FuncionarioDao fD = new FuncionarioDao();
-		 System.out.println("Funcionario no ALTERA nome funcionario---"+f.getNome());
+		 System.out.println("funcionario no ALTERA nome funcionario ---"+f.getNome());
 		
 		
 			boolean retorno = fD.alteraFuncionario(f);
@@ -52,7 +54,7 @@ public class FuncionarioController {
 			if(retorno){
 				return "CadastrarFuncionario";
 			}else{
-				rq.setAttribute("msg","problemas ao alterar professor");
+				rq.setAttribute("msg","problemas ao alterar funcionario");
 				return "erro";
 			}
 	}

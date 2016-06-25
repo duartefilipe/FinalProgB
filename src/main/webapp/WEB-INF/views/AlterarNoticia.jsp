@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,15 +9,15 @@
 <title>Departamento de geociências</title>
 </head>
 <body>
-
-	<jsp:useBean id="log" class="br.csi.modelo.dao.NoticiaDao" />
+	
+		<jsp:useBean id="log" class="br.csi.modelo.dao.NoticiaDao" />
 	<c:set var="noticias" value="${log.getNoticias()}" />
 
+	
 	<nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="RedPrin">Projeto final
-				geociências</a>
+			<a class="navbar-brand" href="RedPrin">Projeto final geociências</a>
 		</div>
 
 		<div id="navbar" class="navbar-collapse collapse">
@@ -27,13 +27,13 @@
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Professores<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="MVC?logica=RedirecionaCadastraProfessor">Cadastrar</a></li>
+						<li><a href="#">Cadastrar</a></li>
 						<li><a href="#produto">professor 2</a></li>
 					</ul></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Funcionarios<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="#destaques">funcionario 1</a></li>
+						<li><a href="#">Cadastrar</a></li>
 						<li><a href="#produto">funcionario 2</a></li>
 					</ul>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -78,24 +78,25 @@
 					<div class="col-md-9">
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
-							<div class="container">
-								<form action="cadastrarNoticia" method="post">
-									<div class="form-group">
-										<h2 align="center">Cadastrar Noticias</h2>
-										
-										<label for="titulo">titulo:</label> <input
-											class="form-control" type="text" id="titulo" name="titulo" />
-										<br /> <label for="texto">texto:</label> <input
-											class="form-control" type="text" id="texto" name="texto" />
+								<div class="container">
+									<form action="AlteraNoticia" method="post">
+										<div class="form-group">
+										<h2 align="center">Alterar Noticia</h2>
+										<input class="form-control" type="hidden" name="id" value="${noti.id}"/>
+											<label for="titulo">titulo:</label>
+											<input class="form-control" type="text" id="titulo" name="titulo" value="${noti.titulo}"/>
+											<br />
+											<label for="texto">texto:</label>
+											<input class="form-control" type="text" id="texto" name="texto" value="${noti.texto}"/>
 										<br />
 
-										<button class="btn btn-primary" type="submit">Cadastrar</button>
-									</div>
-								</form>
-							</div>
+										<button class="btn btn-primary" type="submit">Alterar</button>
+										</div>
+									</form>
+								</div>
 							</nav>
 						</div>
-
+						
 						<!-- teste mostra noticias -->
 
 						<div class="thumbnail" align="center">
@@ -136,7 +137,8 @@
 						</div>
 
 						<!-- teste mostra noticias -->
-
+						
+						
 					</div>
 				</div>
 			</div>
@@ -144,10 +146,8 @@
 	</div>
 
 
-
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
 </body>
 </html>
 

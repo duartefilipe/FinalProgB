@@ -3,12 +3,12 @@ package br.csi.modelo;
 public class Professor {
 	private int id;
 	private String nome;
-	private int siape;
-	private int ramal;
-	private int celular;
+	private String siape;
+	private String ramal;
+	private String celular;
 	private String sala;
-	private int cpf;
-	private int identidade;
+	private String cpf;
+	private String identidade;
 	private String email;
 	public int getId() {
 		return id;
@@ -22,22 +22,22 @@ public class Professor {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getSiape() {
+	public String getSiape() {
 		return siape;
 	}
-	public void setSiape(int siape) {
+	public void setSiape(String siape) {
 		this.siape = siape;
 	}
-	public int getRamal() {
+	public String getRamal() {
 		return ramal;
 	}
-	public void setRamal(int ramal) {
+	public void setRamal(String ramal) {
 		this.ramal = ramal;
 	}
-	public int getCelular() {
+	public String getCelular() {
 		return celular;
 	}
-	public void setCelular(int celular) {
+	public void setCelular(String celular) {
 		this.celular = celular;
 	}
 	public String getSala() {
@@ -46,16 +46,16 @@ public class Professor {
 	public void setSala(String sala) {
 		this.sala = sala;
 	}
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public int getIdentidade() {
+	public String getIdentidade() {
 		return identidade;
 	}
-	public void setIdentidade(int identidade) {
+	public void setIdentidade(String identidade) {
 		this.identidade = identidade;
 	}
 	public String getEmail() {
@@ -64,4 +64,7 @@ public class Professor {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	
+	
 }

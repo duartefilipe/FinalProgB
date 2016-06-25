@@ -15,18 +15,18 @@
 	<nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="index.jsp">Projeto final
+			<a class="navbar-brand" href="RedPrin">Projeto final
 				geociências</a>
 		</div>
 
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="index.jsp">inicio</a></li>
+				<li class="active"><a href="RedPrin">inicio</a></li>
 				<li><a href="RedSobre">Sobre</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Professores<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="MVC?logica=RedirecionaCadastraProfessor">Cadastrar</a></li>
+						<li><a href="#">Cadastrar</a></li>
 						<li><a href="#produto">professor 2</a></li>
 					</ul></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -62,12 +62,15 @@
 					</div>
 					<div class="col-md-3">
 						<div class="list-group">
-							<a href="#" class="list-group-item"> Formularios </a> <a href="#"
-								class="list-group-item"> Localização Salas de Aula </a> <a
-								href="#" class="list-group-item"> Certificados Monitoria </a> <a
-								href="#" class="list-group-item"> relatorios </a> <a
-								href="MVC?logica=RedirecionaCadastrarNoticia#"
-								class="list-group-item">Cadastrar Noticias </a>
+							<a class="list-group-item text text-center" style="background: #E7E7E7"> MENU </a>
+							<a href="#" class="list-group-item"> Formularios </a>
+							<a href="Redlocal" class="list-group-item"> Localização Salas de Aula </a>
+							<a href="#" class="list-group-item"> Certificados Monitoria </a>
+							<a href="#" class="list-group-item"> relatorios </a>
+							<a href="RedCadastraNot" class="list-group-item"> Cadastrar Noticia </a>
+							<a href="RedCadastraProf" class="list-group-item"> Cadastrar Professor </a>
+							<a href="RedCadastraFunc" class="list-group-item"> Cadastrar Funcionario </a>
+							<a href="RedCadastraBol" class="list-group-item"> Cadastrar Bolsista</a>
 						</div>
 					</div>
 
