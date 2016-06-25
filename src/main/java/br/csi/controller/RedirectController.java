@@ -42,6 +42,21 @@ public class RedirectController {
 		return "Localizacao";
 	}
 	
+	@RequestMapping("RedProf")
+	public String redirectProf(HttpServletRequest rq) throws ClassNotFoundException{
+		return "Professores";
+	}
+	
+	@RequestMapping("RedFunc")
+	public String redirectFunc(HttpServletRequest rq) throws ClassNotFoundException{
+		return "Funcionarios";
+	}
+	
+	@RequestMapping("RedBol")
+	public String redirectBol(HttpServletRequest rq) throws ClassNotFoundException{
+		return "Bolsistas";
+	}
+	
 	//--------------------------noticia----------------------------------------------------------------
 	@RequestMapping("RedCadastraNot")
 	public String redirectNot(HttpServletRequest rq) throws ClassNotFoundException{

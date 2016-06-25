@@ -9,14 +9,9 @@
 <title>Departamento de geociências</title>
 </head>
 <body>
-
-	<jsp:useBean id="log" class="br.csi.modelo.dao.NoticiaDao" />
-	<c:set var="noticias" value="${log.getNoticias()}" />
+	<jsp:useBean id="log" class="br.csi.modelo.dao.BolsistasDao" />
+	<c:set var="bolsistas" value="${log.getBolsistas()}" />
 	
-	<jsp:useBean id="log1" class="br.csi.modelo.dao.ProfessorDao" />
-	<c:set var="professores" value="${log1.getProfessores()}" />
-
-
 	<nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
 		<div class="navbar-header">
@@ -65,31 +60,47 @@
 					<div class="col-md-9">
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
-							<div class="container">
-								<h1 align="center">
-									<b>Avisos  principal</b>
-								</h1>
-								<hr>
-								<c:forEach var="noticias" items="${noticias}">
-									<div class="thumbnail text text-center">
-										<h2>
-											<b>${noticias.titulo}</b>
-										</h2>
-										<hr>
-										<p align="center">${noticias.texto}</p>
-									</div>
-								</c:forEach>
+								<div class="container">
+								<h1 align="center">Bolsistas </h1>
+									<div class="thumbnail" align="center">
+										<div class="row">
+											<div class="col-md-12">
+												<section>
+													<table class="text-center table table-bordered table-responsive">
+														<thead>
+															<tr>
+																<th class="text-center">Nome</th>
+																<th class="text-center">celular</th>
+																<th class="text-center">curso</th>
+																<th class="text-center">email</th>
+															</tr>
+														</thead>
+													<tbody>
+												<c:forEach var="bolsistas" items="${bolsistas}">
+													<tr>
+													<td>${bolsistas.nome}</td>
+													<td>${bolsistas.celular}</td>
+													<td>${bolsistas.curso}</td>
+													<td>${bolsistas.email}</td>
+												</tr>
+											</c:forEach>
+										</tbody>
+									</table>
+								</section>
 							</div>
-							</nav>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/bootstrap.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
 </body>
 </html>
+
+
+

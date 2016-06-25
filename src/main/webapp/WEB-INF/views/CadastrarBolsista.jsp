@@ -22,25 +22,9 @@
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="RedPrin">inicio</a></li>
 				<li><a href="RedSobre">Sobre</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Professores<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="MVC?logica=RedirecionaCadastraProfessor">Cadastrar</a></li>
-						<li><a href="#produto">professor 2</a></li>
-					</ul></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Funcionarios<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#destaques">funcionario 1</a></li>
-						<li><a href="#produto">funcionario 2</a></li>
-					</ul>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">bolsistas<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#destaques">bolsista 1</a></li>
-						<li><a href="#produto">bolsista 2</a></li>
-					</ul></li>
-				</li>
+				<li><a href="RedProf">Professores</a></li>
+				<li><a href="RedFunc">Funcionarios</a></li>
+				<li><a href="RedBol">Bolsistas</a></li>
 			</ul>
 		</div>
 	</div>

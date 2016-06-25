@@ -22,21 +22,9 @@
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="index.htm">inicio</a></li>
 				<li><a href="RedSobre">Sobre</a></li>
-				<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Professores<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#produto">professor 2</a></li>
-					</ul></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Funcionarios<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#produto">funcionario 2</a></li>
-					</ul>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">bolsistas<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#produto">bolsista 2</a></li>
-					</ul></li>
+				<li><a href="RedProf">Professores</a></li>
+				<li><a href="RedFunc">Funcionarios</a></li>
+				<li><a href="RedBol">Bolsistas</a></li>
 
 				<li>
 					<div id="navbar" class="navbar-collapse collapse">
