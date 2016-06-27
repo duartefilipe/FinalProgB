@@ -20,7 +20,7 @@ public class NoticiaController {
 	public String adiciona(Noticia noticia) throws ClassNotFoundException, SQLException{		
 		boolean retorno = new NoticiaDao().cadastraNoticia(noticia);
 		if(retorno){
-			return "CadastrarNoticia";
+			return "Noticias";
 		}else{
 			return "principal";
 		}
@@ -37,7 +37,7 @@ public class NoticiaController {
 			boolean retorno = nD.deletarNoticia(id);
 			if(retorno){
 				rq.setAttribute("noticia", nD.getNoticias());
-				return "CadastrarNoticia";
+				return "Noticias";
 			}else{
 				rq.setAttribute("msg","roblema pra excluir");
 				return "erro";
@@ -55,7 +55,7 @@ public class NoticiaController {
 			
 			System.out.println("No Altera noticia  :   "+retorno);
 			if(retorno){
-				return "CadastrarNoticia";
+				return "Noticias";
 			}else{
 				rq.setAttribute("msg","problemas ao alterar Noticia");
 				return "erro";

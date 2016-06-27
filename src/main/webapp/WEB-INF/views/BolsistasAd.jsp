@@ -29,7 +29,7 @@
 	
 	<jsp:useBean id="log1" class="br.csi.modelo.dao.BolsistasDao" />
 	<c:set var="bolsistas" value="${log1.getBolsistas()}" />
-
+	
 	<nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
 		<div class="navbar-header">
@@ -101,38 +101,65 @@
 							<a href="RedCadastraBol" class="list-group-item"> Cadastrar Bolsista</a>
 						</div>
 					</div>
-
 					<div class="col-md-9">
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
-							<div class="container">
-								<form action="cadastrarNoticia" method="post">
-									<div class="form-group">
-										<h2 align="center">Cadastrar Noticias</h2>
-										
-										<label for="titulo">Titulo:</label> <input
-											class="form-control" type="text" id="titulo" name="titulo" />
-										<br /> <label for="texto">Texto:</label> <input
-											class="form-control" type="text" id="texto" name="texto" />
-										<br />
+								<div class="container">
+								<h1 align="center">Bolsistas </h1>
+									<div class="thumbnail" align="center">
+										<div class="row">
+											<div class="col-md-12">
+												<section>
+												<style>
+													table {
+													table-layout: fixed;
+													word-wrap: break-word;
+													}
+													</style>
+								<table class="text-center table table-striped table-responsive">
+									<thead>
+										<tr>
+											<th class="text-center">Nome</th>
+											<th class="text-center">Matricula</th>
+											<th class="text-center">Curso</th>
+											<th class="text-center">RG</th>
+											<th class="text-center">Celular</th>
+											<th class="text-center">Email</th>
+											<th class="text-center">alterar</th>
+											<th class="text-center">deletar</th>
+										</tr>
+									</thead>
+									<tbody>
+									
+									<c:forEach var="bolsistas" items="${bolsistas}">
+											<tr>
+												<td>${bolsistas.nome}</td>
+												<td>${bolsistas.matricula}</td>
+												<td>${bolsistas.curso}</td>
+												<td>${bolsistas.identidade}</td>
+												<td>${bolsistas.celular}</td>
+												<td>${bolsistas.email}</td>
+												<td><a class="btn btn-success btn-sm glyphicon glyphicon-refresh" href="RedAlteraBol?id=${bolsistas.id}"></a></td>
+												<td><a class="btn btn-danger  btn-sm btn btn-success btn-sm glyphicon glyphicon-remove" href="RemoverBolsista?id=${bolsistas.id}"></a></td>
+										</c:forEach>
+									</tbody>
+								</table>
 
-										<button class="btn btn-primary" type="submit">Cadastrar</button>
-									</div>
-								</form>
+								</section>
 							</div>
-							</nav>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+			</div>
+		</div>
 	</div>
+</div>
 
 
-
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
 </body>
 </html>
 

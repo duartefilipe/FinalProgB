@@ -29,7 +29,7 @@
 	
 	<jsp:useBean id="log1" class="br.csi.modelo.dao.BolsistasDao" />
 	<c:set var="bolsistas" value="${log1.getBolsistas()}" />
-
+	
 	<nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
 		<div class="navbar-header">
@@ -105,34 +105,58 @@
 					<div class="col-md-9">
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
-							<div class="container">
-								<form action="cadastrarNoticia" method="post">
-									<div class="form-group">
-										<h2 align="center">Cadastrar Noticias</h2>
-										
-										<label for="titulo">Titulo:</label> <input
-											class="form-control" type="text" id="titulo" name="titulo" />
-										<br /> <label for="texto">Texto:</label> <input
-											class="form-control" type="text" id="texto" name="texto" />
-										<br />
-
-										<button class="btn btn-primary" type="submit">Cadastrar</button>
-									</div>
-								</form>
+								<div class="container">
+								<h1 align="center">Noticias </h1>
+										<div class="thumbnail" align="center">
+										<div class="row">
+											<div class="col-md-12">
+												<section>
+												<style>
+													table {
+													table-layout: fixed;
+													word-wrap: break-word;
+													}
+													</style>
+								<table class="text-center table table-striped table-responsive">
+														<thead>
+															<tr>
+																<th class="text-center">Titulo</th>
+																<th class="text-center">Texto</th>
+																<th class="text-center">alterar</th>
+																<th class="text-center">deletar</th>
+				
+															</tr>
+														</thead>
+													<tbody>
+														<c:forEach var="noticias" items="${noticias}">
+															<tr>
+																<td>${noticias.titulo}</td>
+																<td>${noticias.texto}</td>
+																<td><a
+																	class="btn btn-success btn-sm glyphicon glyphicon-refresh"
+																	href="RedAlteraNoti?id=${noticias.id}">
+																</a></td>
+																<td><a a
+																	class="btn btn-danger  btn-sm btn btn-success btn-sm glyphicon glyphicon-remove"
+																	href="RemoverNoticia?id=${noticias.id}">
+																</a></td>
+															</tr>
+														</c:forEach>
+												</tbody>
+											</table>
+									</section>
+								</div>
 							</div>
-							</nav>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 
-
-
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
 </body>
 </html>
 

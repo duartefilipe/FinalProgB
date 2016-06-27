@@ -106,17 +106,29 @@
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
 							<div class="container">
-								<form action="cadastrarNoticia" method="post">
+								<form action="AlteraBolsista" method="post">
 									<div class="form-group">
-										<h2 align="center">Cadastrar Noticias</h2>
-										
-										<label for="titulo">Titulo:</label> <input
-											class="form-control" type="text" id="titulo" name="titulo" />
-										<br /> <label for="texto">Texto:</label> <input
-											class="form-control" type="text" id="texto" name="texto" />
-										<br />
-
-										<button class="btn btn-primary" type="submit">Cadastrar</button>
+										<h2 align="center">Alterar Bolsistas</h2>
+											<input class="form-control" type="hidden" name="id" value="${bol.id}"/>
+												<label for="nome">Nome:</label>
+												<input class="form-control" type="text" name="nome" value="${bol.nome}"/>
+												<br />
+												<label for="siape">Matricula:</label>
+												<input class="form-control" type="text" name="matricula" value="${bol.matricula}"/>
+												<br />
+												<label for="ramal">Curso:</label>
+												<input class="form-control" type="text" name="curso" value="${bol.curso}"/>
+												<br />
+												<label for="celular">Identidade:</label>
+												<input class="form-control" type="text" name="identidade" value="${bol.identidade}"/>
+												<br />
+												<label for="sala">Celular:</label>
+												<input class="form-control" type="text" name="celular" value="${bol.celular}"/>
+												<br />
+												<label for="cpf">Email:</label>
+												<input class="form-control" type="text" name="email" value="${bol.email}"/>
+												<br />
+												<button class="btn btn-primary" type="submit">Alterar</button>
 									</div>
 								</form>
 							</div>
@@ -127,7 +139,6 @@
 			</div>
 		</div>
 	</div>
-
 
 
 	<script

@@ -78,12 +78,12 @@ public class NoticiaDao {
 
 	public ArrayList<Noticia> getNoticias() throws ClassNotFoundException {
 
-		ArrayList<Noticia> log1 = new ArrayList<Noticia>();
+		ArrayList<Noticia> log3 = new ArrayList<Noticia>();
 		Connection con = ConectaBanco.getConexao();
 		Noticia noti;
 
 		try {
-			String sql = "select * from noticia";
+			String sql = "SELECT * FROM noticia ORDER BY id DESC";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
 
@@ -92,14 +92,14 @@ public class NoticiaDao {
 				noti.setId(rs.getInt("id"));
 				noti.setTitulo(rs.getString("titulo"));
 				noti.setTexto(rs.getString("texto"));
-				log1.add(noti);
+				log3.add(noti);
 				System.out.println("Adicionado no Array");
 			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	return log1;
+	return log3;
 }
 
 	public Noticia getNoticia(int id) throws ClassNotFoundException {

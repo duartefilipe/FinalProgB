@@ -17,7 +17,7 @@ public class FuncionarioController {
 	public String adiciona (Funcionario funcionario) throws ClassNotFoundException, SQLException{
 		boolean retorno = new FuncionarioDao().cadastraFuncionario(funcionario);
 		if(retorno){
-			return "CadastrarFuncionario";
+			return "principal";
 		}else{
 			return "principal";
 		}
@@ -34,7 +34,7 @@ public class FuncionarioController {
 			boolean retorno = fD.deletarFuncionario(id);
 			if(retorno){
 				rq.setAttribute("funcionarios", fD.getFuncionarios());
-				return "CadastrarFuncionario";
+				return "principal";
 			}else{
 				rq.setAttribute("msg","roblema pra excluir");
 				return "erro";
@@ -52,9 +52,24 @@ public class FuncionarioController {
 			
 			System.out.println("No Altera funcionario  :   "+retorno);
 			if(retorno){
-				return "CadastrarFuncionario";
+				return "principal";
 			}else{
 				rq.setAttribute("msg","problemas ao alterar funcionario");
+				return "erro";
+			}
+	}
+	
+	@RequestMapping("MostraFuncionario")
+	public String MostraFuncionario(Funcionario f, HttpServletRequest rq) throws NoSuchAlgorithmException, ClassNotFoundException, SQLException{
+		
+		FuncionarioDao fD = new FuncionarioDao();
+
+			boolean retorno = fD.alteraFuncionario(f);
+			
+			if(retorno){
+				return "ExibeFuncionario";
+			}else{
+				rq.setAttribute("msg","problemas ao alterar professor");
 				return "erro";
 			}
 	}

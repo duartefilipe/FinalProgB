@@ -29,7 +29,7 @@
 	
 	<jsp:useBean id="log1" class="br.csi.modelo.dao.BolsistasDao" />
 	<c:set var="bolsistas" value="${log1.getBolsistas()}" />
-
+	
 	<nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
 		<div class="navbar-header">
@@ -67,7 +67,6 @@
               </li>
 	
 				<li><a href="RedNoti">Noticias</a></li>
-				<li>
 				<div id="navbar" class="navbar-collapse collapse">
 						<form action="logout" class="navbar-form navbar-right">
 							<button type="submit" class="btn btn-danger">Sair</button>
@@ -99,40 +98,72 @@
 							<a href="RedCadastraProf" class="list-group-item"> Cadastrar Professor </a>
 							<a href="RedCadastraFunc" class="list-group-item"> Cadastrar Funcionario </a>
 							<a href="RedCadastraBol" class="list-group-item"> Cadastrar Bolsista</a>
-						</div>
+							</div>
 					</div>
 
 					<div class="col-md-9">
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
-							<div class="container">
-								<form action="cadastrarNoticia" method="post">
-									<div class="form-group">
-										<h2 align="center">Cadastrar Noticias</h2>
-										
-										<label for="titulo">Titulo:</label> <input
-											class="form-control" type="text" id="titulo" name="titulo" />
-										<br /> <label for="texto">Texto:</label> <input
-											class="form-control" type="text" id="texto" name="texto" />
-										<br />
+								<div class="container">
+								<h1 align="center">Funcionarios </h1>
+									<div class="thumbnail" align="center">
+										<div class="row">
+											<div class="col-md-12">
+												<section>
+												<style>
+													table {
+													table-layout: fixed;
+													word-wrap: break-word;
+													}
+													</style>
+								<table class="text-center table table-striped table-responsive">
+									<thead>
+										<tr>
+											<th class="text-center">Nome</th>
+											<th class="text-center">siape</th>
+											<th class="text-center">ramal</th>
+											<th class="text-center">celular</th>
+											<th class="text-center">sala</th>
+											<th class="text-center">cpf</th>
+											<th class="text-center">RG</th>
+											<th class="text-center">email</th>
+											<th class="text-center">alterar</th>
+											<th class="text-center">deletar</th>
+										</tr>
+									</thead>
+									<tbody>
+									
+									<c:forEach var="professores" items="${professores}">
+											<tr>
+												<td>${professores.nome}</td>
+												<td>${professores.siape}</td>
+												<td>${professores.ramal}</td>
+												<td>${professores.celular}</td>
+												<td>${professores.sala}</td>
+												<td>${professores.cpf}</td>
+												<td>${professores.identidade}</td>
+												<td>${professores.email}</td>
+												<td><a class="btn btn-success btn-sm glyphicon glyphicon-refresh" href="RedAlteraFunc?id=${professores.id}"></a></td>
+												<td><a class="btn btn-danger  btn-sm btn btn-success btn-sm glyphicon glyphicon-remove" href="RemoverFuncionario?id=${professores.id}"></a></td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
 
-										<button class="btn btn-primary" type="submit">Cadastrar</button>
-									</div>
-								</form>
+								</section>
 							</div>
-							</nav>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
+</div>
+</div>
 
-
-
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
 </body>
 </html>
 

@@ -95,12 +95,12 @@ public class FuncionarioDao {
 
 	public ArrayList<Funcionario> getFuncionarios() throws ClassNotFoundException {
 
-		ArrayList<Funcionario> log1 = new ArrayList<Funcionario>();
+		ArrayList<Funcionario> log2 = new ArrayList<Funcionario>();
 		Connection con = ConectaBanco.getConexao();
 		Funcionario func;
 
 		try {
-			String sql = "select * from funcionario";
+			String sql = "SELECT * FROM funcionario ORDER BY nome ASC";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
 
@@ -116,14 +116,14 @@ public class FuncionarioDao {
 				func.setIdentidade(rs.getString("identidade"));
 				func.setEmail(rs.getString("email"));
 
-				log1.add(func);
+				log2.add(func);
 				System.out.println("Adicionado no Array");
 			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return log1;
+		return log2;
 	}
 
 	public Funcionario getfuncionario(int id) throws ClassNotFoundException {

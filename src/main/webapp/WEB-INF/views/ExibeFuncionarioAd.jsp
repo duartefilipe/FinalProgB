@@ -106,17 +106,37 @@
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
 							<div class="container">
-								<form action="cadastrarNoticia" method="post">
+								<form action="AlteraFuncionario" method="post">
 									<div class="form-group">
-										<h2 align="center">Cadastrar Noticias</h2>
-										
-										<label for="titulo">Titulo:</label> <input
-											class="form-control" type="text" id="titulo" name="titulo" />
-										<br /> <label for="texto">Texto:</label> <input
-											class="form-control" type="text" id="texto" name="texto" />
+										<h2 align="center">Alterar Funcionarios</h2>
+										<input class="form-control" type="hidden" name="id" value="${func.id}"/>
+										<label for="nome">Nome:</label>
+										<input class="form-control" type="text" name="nome" value="${func.nome}"/>										
 										<br />
-
-										<button class="btn btn-primary" type="submit">Cadastrar</button>
+										<label for="siape">SIAPE:</label>
+										<input class="form-control" type="text" name="siape" value="${func.siape}" />
+										<br />
+										<label for="ramal">Ramal:</label>
+										<input class="form-control" type="text" name="ramal" value="${func.ramal}" />
+										<br />
+										<label for="celular">Celular:</label>
+										<input class="form-control" type="text" name="celular" value="${func.celular}" />
+										<br />
+										<label for="sala">Sala:</label>
+										<input class="form-control" type="text" name="sala" value="${func.sala}" />
+										<br />
+										<label for="cpf">CPF:</label>
+										<input class="form-control" type="text" name="cpf" value="${func.cpf}" />
+										<br />
+										<label for="identidade">Identidade:</label>
+										<input class="form-control" type="text" name="identidade" value="${func.identidade}" />
+										<br />
+										<label for="email">Email:</label>
+										<input class="form-control" type="text" name="email" value="${func.email}" />
+										<br />
+										
+										<button class="btn btn-primary" type="submit">Alterar</button>
+										<a class="btn btn-danger" href="RemoverFuncionario?id=${func.id}">Deletar</a>
 									</div>
 								</form>
 							</div>
@@ -127,7 +147,6 @@
 			</div>
 		</div>
 	</div>
-
 
 
 	<script

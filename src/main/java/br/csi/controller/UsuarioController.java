@@ -43,4 +43,10 @@ public class UsuarioController {
 		}
 		return "index";
 	}
+	
+	@RequestMapping("logout")
+	public String logout (HttpServletRequest rq){
+		rq.getSession().invalidate();
+		return "index";
+	}
 }

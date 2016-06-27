@@ -65,12 +65,11 @@
                </c:forEach>
                </ul>
               </li>
-	
-				<li><a href="RedNoti">Noticias</a></li>
+					<li><a href="RedNoti">Noticias</a></li>
 				<li>
-				<div id="navbar" class="navbar-collapse collapse">
+				<div id="navbar" class="navbar-collapse collapse pull-right">
 						<form action="logout" class="navbar-form navbar-right">
-							<button type="submit" class="btn btn-danger">Sair</button>
+							<button type="submit" class="btn btn-danger pull-right">Sair</button>
 						</form>
 					</div>
 				</li>
@@ -95,10 +94,9 @@
 					<div class="col-md-3">
 						<div class="list-group">
 							<a class="list-group-item text text-center" style="background: #E7E7E7"> MENU </a>
-							<a href="RedCadastraNot" class="list-group-item"> Cadastrar Noticia </a>
-							<a href="RedCadastraProf" class="list-group-item"> Cadastrar Professor </a>
-							<a href="RedCadastraFunc" class="list-group-item"> Cadastrar Funcionario </a>
-							<a href="RedCadastraBol" class="list-group-item"> Cadastrar Bolsista</a>
+							<a href="RedForm" class="list-group-item"> Formularios </a>
+							<a href="Redlocal" class="list-group-item">Localização Salas de Aula </a>
+							<a href="RedCert" class="list-group-item"> Certificados Monitoria </a>
 						</div>
 					</div>
 
@@ -106,19 +104,38 @@
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
 							<div class="container">
-								<form action="cadastrarNoticia" method="post">
+								<form action="AlteraProfessor" method="post">
 									<div class="form-group">
-										<h2 align="center">Cadastrar Noticias</h2>
-										
-										<label for="titulo">Titulo:</label> <input
-											class="form-control" type="text" id="titulo" name="titulo" />
-										<br /> <label for="texto">Texto:</label> <input
-											class="form-control" type="text" id="texto" name="texto" />
+										<h2 align="center">Alterar Professores</h2>
+										<input class="form-control" type="hidden" name="id" value="${prof.id}"/>
+										<label for="nome">Nome:</label>
+										<input class="form-control" type="text" name="nome" value="${prof.nome}"/>										
 										<br />
-
-										<button class="btn btn-primary" type="submit">Cadastrar</button>
-									</div>
-								</form>
+										<label for="siape">SIAPE:</label>
+										<input class="form-control" type="text" name="siape" value="${prof.siape}" />
+										<br />
+										<label for="ramal">Ramal:</label>
+										<input class="form-control" type="text" name="ramal" value="${prof.ramal}" />
+										<br />
+										<label for="celular">Celular:</label>
+										<input class="form-control" type="text" name="celular" value="${prof.celular}" />
+										<br />
+										<label for="sala">Sala:</label>
+										<input class="form-control" type="text" name="sala" value="${prof.sala}" />
+										<br />
+										<label for="cpf">CPF:</label>
+										<input class="form-control" type="text" name="cpf" value="${prof.cpf}" />
+										<br />
+										<label for="identidade">Identidade:</label>
+										<input class="form-control" type="text" name="identidade" value="${prof.identidade}" />
+										<br />
+										<label for="email">Email:</label>
+										<input class="form-control" type="text" name="email" value="${prof.email}" />
+										<br />
+										<button class="btn btn-primary" type="submit">Alterar</button>
+										<a class="btn btn-danger" href="RemoverProfessor?id=${prof.id}">Deletar</a>
+										</div>
+										</form>
 							</div>
 							</nav>
 						</div>
@@ -127,7 +144,6 @@
 			</div>
 		</div>
 	</div>
-
 
 
 	<script

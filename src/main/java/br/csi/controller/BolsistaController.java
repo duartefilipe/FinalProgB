@@ -15,7 +15,7 @@ public class BolsistaController {
 	public String adiciona (Bolsista bolsista) throws ClassNotFoundException, SQLException{
 		boolean retorno = new BolsistasDao().cadastraBolsistas(bolsista);
 		if(retorno){
-			return "CadastrarBolsista";
+			return "ExibeBolsistaAd";
 		}else{
 			return "principal";
 		}
@@ -32,7 +32,7 @@ public class BolsistaController {
 			boolean retorno = bD.deletarBolsista(id);
 			if(retorno){
 				rq.setAttribute("bolsistas", bD.getBolsistas());
-				return "CadastrarBolsista";
+				return "BolsistasAd";
 			}else{
 				rq.setAttribute("msg","roblema pra excluir");
 				return "erro";
@@ -48,7 +48,23 @@ public class BolsistaController {
 			boolean retorno = bD.alteraBolsista(b);
 			System.out.println("No Altera bolsista  :   "+retorno);
 			if(retorno){
-				return "CadastrarBolsista";
+				return "BolsistasAd";
+			}else{
+				rq.setAttribute("msg","problemas ao alterar professor");
+				return "erro";
+			}
+	}		
+	
+	@RequestMapping("MostraBolsista")
+	public String MostraBolsista(Bolsista b, HttpServletRequest rq) throws NoSuchAlgorithmException, ClassNotFoundException, SQLException{
+		
+		BolsistasDao bD = new BolsistasDao();
+		 System.out.println("bolsistas no ALTERA nome bolsista---"+b.getNome());
+		
+			boolean retorno = bD.alteraBolsista(b);
+			System.out.println("No Altera bolsista  :   "+retorno);
+			if(retorno){
+				return "ExibeBolsista";
 			}else{
 				rq.setAttribute("msg","problemas ao alterar professor");
 				return "erro";

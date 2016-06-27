@@ -29,7 +29,7 @@
 	
 	<jsp:useBean id="log1" class="br.csi.modelo.dao.BolsistasDao" />
 	<c:set var="bolsistas" value="${log1.getBolsistas()}" />
-
+	
 	<nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
 		<div class="navbar-header">
@@ -99,40 +99,72 @@
 							<a href="RedCadastraProf" class="list-group-item"> Cadastrar Professor </a>
 							<a href="RedCadastraFunc" class="list-group-item"> Cadastrar Funcionario </a>
 							<a href="RedCadastraBol" class="list-group-item"> Cadastrar Bolsista</a>
-						</div>
+							</div>
 					</div>
 
 					<div class="col-md-9">
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
-							<div class="container">
-								<form action="cadastrarNoticia" method="post">
-									<div class="form-group">
-										<h2 align="center">Cadastrar Noticias</h2>
-										
-										<label for="titulo">Titulo:</label> <input
-											class="form-control" type="text" id="titulo" name="titulo" />
-										<br /> <label for="texto">Texto:</label> <input
-											class="form-control" type="text" id="texto" name="texto" />
-										<br />
+								<div class="container">
+								<h1 align="center">Funcionarios </h1>
+									<div class="thumbnail" align="center">
+										<div class="row">
+											<div class="col-md-12">
+												<section>
+												<style>
+													table {
+													table-layout: fixed;
+													word-wrap: break-word;
+													}
+													</style>
+								<table class="text-center table table-striped table-responsive">
+									<thead>
+										<tr>
+											<th class="text-center">Nome</th>
+											<th class="text-center">siape</th>
+											<th class="text-center">ramal</th>
+											<th class="text-center">celular</th>
+											<th class="text-center">sala</th>
+											<th class="text-center">cpf</th>
+											<th class="text-center">RG</th>
+											<th class="text-center">email</th>
+											<th class="text-center">alterar</th>
+											<th class="text-center">deletar</th>
+										</tr>
+									</thead>
+									<tbody>
 
-										<button class="btn btn-primary" type="submit">Cadastrar</button>
-									</div>
-								</form>
+										<c:forEach var="funcionarios" items="${funcionarios}">
+											<tr>
+												<td>${funcionarios.nome}</td>
+												<td>${funcionarios.siape}</td>
+												<td>${funcionarios.ramal}</td>
+												<td>${funcionarios.celular}</td>
+												<td>${funcionarios.sala}</td>
+												<td>${funcionarios.cpf}</td>
+												<td>${funcionarios.identidade}</td>
+												<td>${funcionarios.email}</td>
+												<td><a class="btn btn-success btn-sm glyphicon glyphicon-refresh" href="RedAlteraFunc?id=${funcionarios.id}"></a></td>
+												<td><a class="btn btn-danger  btn-sm btn btn-success btn-sm glyphicon glyphicon-remove" href="RemoverFuncionario?id=${funcionarios.id}"></a></td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+
+								</section>
 							</div>
-							</nav>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
+</div>
+</div>
 
-
-
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
 </body>
 </html>
 

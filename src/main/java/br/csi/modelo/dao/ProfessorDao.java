@@ -99,7 +99,7 @@ public class ProfessorDao {
 		Professor prof;
 
 		try {
-			String sql = "select * from professor";
+			String sql = "SELECT * FROM professor ORDER BY nome ASC";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
 
@@ -186,6 +186,38 @@ public class ProfessorDao {
 		return p;
 	}
 	
+public Professor pesquisaProfessor2(int id ) throws ClassNotFoundException, SQLException{
+		
+		Professor p = null;
+		
+		Connection c = ConectaBanco.getConexao();
+		String sql = "select * from professor where id=?";
+		PreparedStatement stmtPre = c.prepareStatement(sql);
+		
+		System.out.println("ID NO DAO DO PROFESSOR"+id);
+		
+		stmtPre.setInt(1, id);
+		
+		ResultSet rs= stmtPre.executeQuery();
+		while(rs.next()){
+				p = new Professor();	    
+				
+				p.setId(rs.getInt("id"));
+				p.setNome(rs.getString("nome"));
+				p.setSiape(rs.getString("siape"));
+				p.setRamal(rs.getString("ramal"));
+				p.setCelular(rs.getString("celular"));
+				p.setSala(rs.getString("sala"));
+				p.setCpf(rs.getString("cpf"));
+				p.setIdentidade(rs.getString("identidade"));
+				p.setEmail(rs.getString("email"));
+				
+				System.out.println("PROFESSORDAO nome Professor----"+p.getNome());
+		}
+		return p;
+	}
+	
+
 	public boolean deletarProfessor(int id) throws SQLException, Exception {
         boolean deletar = false;
         Connection c = null;

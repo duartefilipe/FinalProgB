@@ -174,7 +174,7 @@ public class BolsistasDao {
 		Bolsista bol;
 
 		try {
-			String sql = "select * from bolsista";
+			String sql = "SELECT * FROM bolsista ORDER BY nome ASC";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
 

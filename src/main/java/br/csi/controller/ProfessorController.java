@@ -15,7 +15,7 @@ public class ProfessorController {
 	public String adiciona (Professor professor) throws ClassNotFoundException, SQLException{
 		boolean retorno = new ProfessorDao().cadastraProfessor(professor);
 		if(retorno){
-			return "CadastrarProfessor";
+			return "principal";
 		}else{
 			return "principal";
 		}
@@ -32,7 +32,7 @@ public class ProfessorController {
 			boolean retorno = pD.deletarProfessor(id);
 			if(retorno){
 				rq.setAttribute("professores", pD.getProfessores());
-				return "CadastrarProfessor";
+				return "principal";
 			}else{
 				rq.setAttribute("msg","roblema pra excluir");
 				return "erro";
@@ -50,12 +50,30 @@ public class ProfessorController {
 			
 			System.out.println("No Altera professor  :   "+retorno);
 			if(retorno){
-				return "CadastrarProfessor";
+				return "principal";
 			}else{
 				rq.setAttribute("msg","problemas ao alterar professor");
 				return "erro";
 			}
 	}
 	
+	@RequestMapping("MostraProfessor")
+	public String MostraProfessor(Professor p, HttpServletRequest rq) throws NoSuchAlgorithmException, ClassNotFoundException, SQLException{
+		
+		ProfessorDao pD = new ProfessorDao();
+		 System.out.println("PROFESSOR no ALTERA nomeProfessor---"+p.getNome());
+		
+		
+			boolean retorno = pD.alteraProfessor(p);
+			
+			System.out.println("No Altera professor  :   "+retorno);
+			if(retorno){
+				return "ExibeProfessorAd";
+			}else{
+				rq.setAttribute("msg","problemas ao alterar professor");
+				return "erro";
+			}
+	}
+		
 		
 }	

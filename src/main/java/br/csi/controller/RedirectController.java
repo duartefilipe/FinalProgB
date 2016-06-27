@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.support.SessionStatus;
 
 import br.csi.modelo.Bolsista;
 import br.csi.modelo.Funcionario;
@@ -32,6 +33,7 @@ public class RedirectController {
 	public String redirectSobre(HttpServletRequest rq) throws ClassNotFoundException{
 		return "Sobre";
 	}
+	
 	@RequestMapping("RedPrin")
 	public String redirectPrin(HttpServletRequest rq) throws ClassNotFoundException{
 		return "principal";
@@ -42,19 +44,49 @@ public class RedirectController {
 		return "Localizacao";
 	}
 	
-	@RequestMapping("RedProf")
-	public String redirectProf(HttpServletRequest rq) throws ClassNotFoundException{
-		return "Professores";
+	@RequestMapping("RedProfAl")
+	public String redirectProfAl(HttpServletRequest rq) throws ClassNotFoundException{
+		return "ProfessoresAl";
 	}
 	
-	@RequestMapping("RedFunc")
-	public String redirectFunc(HttpServletRequest rq) throws ClassNotFoundException{
-		return "Funcionarios";
+	@RequestMapping("RedProfAd")
+	public String redirectProfAd(HttpServletRequest rq) throws ClassNotFoundException{
+		return "ProfessoresAd";
 	}
 	
-	@RequestMapping("RedBol")
-	public String redirectBol(HttpServletRequest rq) throws ClassNotFoundException{
-		return "Bolsistas";
+	@RequestMapping("RedFuncAl")
+	public String redirectFuncAl(HttpServletRequest rq) throws ClassNotFoundException{
+		return "FuncionariosAl";
+	}
+	
+	@RequestMapping("RedFuncAd")
+	public String redirectFuncAd(HttpServletRequest rq) throws ClassNotFoundException{
+		return "FuncionariosAd";
+	}
+	
+	@RequestMapping("RedBolAl")
+	public String redirectBolAl(HttpServletRequest rq) throws ClassNotFoundException{
+		return "BolsistasAl";
+	}
+	
+	@RequestMapping("RedBolAd")
+	public String redirectBolAd(HttpServletRequest rq) throws ClassNotFoundException{
+		return "BolsistasAd";
+	}
+	
+	@RequestMapping("RedNoti")
+	public String redirectNoti(HttpServletRequest rq) throws ClassNotFoundException{
+		return "Noticias";
+	}
+	
+	@RequestMapping("RedForm")
+	public String redirectForm(HttpServletRequest rq) throws ClassNotFoundException{
+		return "Formularios";
+	}
+	
+	@RequestMapping("RedCert")
+	public String redirectCert(HttpServletRequest rq) throws ClassNotFoundException{
+		return "Certificados";
 	}
 	
 	//--------------------------noticia----------------------------------------------------------------
@@ -104,6 +136,40 @@ public class RedirectController {
 		return "AlterarProfessor";
 	}
 	
+	@RequestMapping("RedAlteraProf2Ad")
+	public String redirectMostraProfessor(HttpServletRequest rq) throws ClassNotFoundException, SQLException{
+		
+		int id =  Integer.parseInt(rq.getParameter("id"));
+		
+		System.out.println("AQUI NO REDIRECT PROFESSOR ALTERA"+id);
+		
+		Professor p = new Professor();
+		ProfessorDao pD = new ProfessorDao();
+		
+		p = pD.pesquisaProfessor2(id);
+		
+		System.out.println("NOME PROFESSOR NO REDIRECT-----------"+p.getNome());
+		rq.setAttribute("prof", p);
+		return "ExibeProfessorAd";
+	}
+	
+	@RequestMapping("RedAlteraProf2Al")
+	public String redirectMostraProfessor2(HttpServletRequest rq) throws ClassNotFoundException, SQLException{
+		
+		int id =  Integer.parseInt(rq.getParameter("id"));
+		
+		System.out.println("AQUI NO REDIRECT PROFESSOR ALTERA"+id);
+		
+		Professor p = new Professor();
+		ProfessorDao pD = new ProfessorDao();
+		
+		p = pD.pesquisaProfessor2(id);
+		
+		System.out.println("NOME PROFESSOR NO REDIRECT-----------"+p.getNome());
+		rq.setAttribute("prof", p);
+		return "ExibeProfessorAl";
+	}
+	
 	//--------------------------professor----------------------------------------------------------------
 	
 	
@@ -130,6 +196,40 @@ public class RedirectController {
 		return "AlterarFuncionario";
 	}
 	
+	@RequestMapping("RedAlteraFunc2Ad")
+	public String redirectMostraFuncionario(HttpServletRequest rq) throws ClassNotFoundException, SQLException{
+		
+		int id =  Integer.parseInt(rq.getParameter("id"));
+		
+		System.out.println("AQUI NO REDIRECT FUNCIONARIO ALTERA"+id);
+		
+		Funcionario f = new Funcionario();
+		FuncionarioDao fD = new FuncionarioDao();
+		
+		f = fD.pesquisaFuncionario(id);
+		
+		System.out.println("NOME FUNCIONARIO NO REDIRECT-----------"+f.getNome());
+		rq.setAttribute("func", f);
+		return "ExibeFuncionarioAd";
+	}
+	
+	@RequestMapping("RedAlteraFunc2Al")
+	public String redirectMostraFuncionario2(HttpServletRequest rq) throws ClassNotFoundException, SQLException{
+		
+		int id =  Integer.parseInt(rq.getParameter("id"));
+		
+		System.out.println("AQUI NO REDIRECT FUNCIONARIO ALTERA"+id);
+		
+		Funcionario f = new Funcionario();
+		FuncionarioDao fD = new FuncionarioDao();
+		
+		f = fD.pesquisaFuncionario(id);
+		
+		System.out.println("NOME FUNCIONARIO NO REDIRECT-----------"+f.getNome());
+		rq.setAttribute("func", f);
+		return "ExibeFuncionarioAl";
+	}
+	
 	//-----------------------------------------funcionario------------------------------------------------
 	
 	//-----------------------------------------bolsista------------------------------------------------
@@ -153,6 +253,40 @@ public class RedirectController {
 			System.out.println("NOME bolsista NO REDIRECT-----------"+b.getNome());
 			rq.setAttribute("bol", b);
 			return "AlterarBolsista";
+		}
+		
+		@RequestMapping("RedAlteraBol2Ad")
+		public String redirectMostraBolsista(HttpServletRequest rq) throws ClassNotFoundException, SQLException{
+			
+			int id =  Integer.parseInt(rq.getParameter("id"));
+			
+			System.out.println("AQUI NO REDIRECT FUNCIONARIO ALTERA"+id);
+			
+			Bolsista b = new Bolsista();
+			BolsistasDao bD = new BolsistasDao();
+			
+			b = bD.pesquisaBolsista(id);
+			
+			System.out.println("NOME bolsista NO REDIRECT-----------"+b.getNome());
+			rq.setAttribute("bol", b);
+			return "ExibeBolsistaAd";
+		}
+		
+		@RequestMapping("RedAlteraBol2Al")
+		public String redirectMostraBolsista2(HttpServletRequest rq) throws ClassNotFoundException, SQLException{
+			
+			int id =  Integer.parseInt(rq.getParameter("id"));
+			
+			System.out.println("AQUI NO REDIRECT FUNCIONARIO ALTERA"+id);
+			
+			Bolsista b = new Bolsista();
+			BolsistasDao bD = new BolsistasDao();
+			
+			b = bD.pesquisaBolsista(id);
+			
+			System.out.println("NOME bolsista NO REDIRECT-----------"+b.getNome());
+			rq.setAttribute("bol", b);
+			return "ExibeBolsistaAl";
 		}
 		
 		//-----------------------------------------bolsista------------------------------------------------
