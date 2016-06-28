@@ -59,20 +59,5 @@ public class FuncionarioController {
 			}
 	}
 	
-	@RequestMapping("MostraFuncionario")
-	public String MostraFuncionario(Funcionario f, HttpServletRequest rq) throws NoSuchAlgorithmException, ClassNotFoundException, SQLException{
-		
-		FuncionarioDao fD = new FuncionarioDao();
-
-			boolean retorno = fD.alteraFuncionario(f);
-			
-			if(retorno){
-				return "ExibeFuncionario";
-			}else{
-				rq.setAttribute("msg","problemas ao alterar professor");
-				return "erro";
-			}
-	}
-	
 		
 }	

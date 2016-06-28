@@ -4,17 +4,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link href="resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="resources/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <link href="navbar-fixed-top.css" rel="stylesheet">
-    <script src="resources/js/ie-emulation-modes-warning.js"></script>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+
+		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="resources/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+		<link href="navbar-fixed-top.css" rel="stylesheet">
+		<script src="resources/js/ie-emulation-modes-warning.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		
 <title>Departamento de geociências</title>
+
 </head>
 <body>
 
@@ -29,7 +32,7 @@
 	
 	<jsp:useBean id="log1" class="br.csi.modelo.dao.BolsistasDao" />
 	<c:set var="bolsistas" value="${log1.getBolsistas()}" />
-
+	
 	<nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
 		<div class="navbar-header">
@@ -38,37 +41,36 @@
 
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="RedPrin">inicio</a></li>
+				<li class="active"><a href="RedPrin">Inicio</a></li>
 				<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Professores <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-              <c:forEach var="professores" items="${professores}">
-                <li><a href="RedAlteraProf2Ad?id=${professores.id}">${professores.nome}</a></li>
-               </c:forEach>
-               </ul>
-              </li>
-              
-              				<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Funcionarios <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-              <c:forEach var="funcionarios" items="${funcionarios}">
-                <li><a href="RedAlteraFunc2Ad?id=${funcionarios.id}">${funcionarios.nome}</a></li>
-               </c:forEach>
-               </ul>
-              </li>
-              
-              <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bolsistas <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-              <c:forEach var="bolsistas" items="${bolsistas}">
-                <li><a href="RedAlteraBol2Ad?id=${bolsistas.id}">${bolsistas.nome}</a></li>
-               </c:forEach>
-               </ul>
-              </li>
-	
-				<li><a href="RedNoti">Noticias</a></li>
+              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Professores <span class="caret"></span></a>
+              		<ul class="dropdown-menu">
+              			<c:forEach var="professores" items="${professores}">
+                			<li><a href="RedMostraProfAd?id=${professores.id}">${professores.nome}</a></li>
+               			</c:forEach>
+              		</ul>
+                </li>
+                
+              	<li class="dropdown">
+              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Funcionarios <span class="caret"></span></a>
+              		<ul class="dropdown-menu">
+              			<c:forEach var="funcionarios" items="${funcionarios}">
+                			<li><a href="RedMostraFuncAd?id=${funcionarios.id}">${funcionarios.nome}</a></li>
+               			</c:forEach>
+               		</ul>
+              	</li>
+              	
+              	<li class="dropdown">
+              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bolsistas <span class="caret"></span></a>
+              		<ul class="dropdown-menu">
+              			<c:forEach var="bolsistas" items="${bolsistas}">
+                			<li><a href="RedMostraBolAd?id=${bolsistas.id}">${bolsistas.nome}</a></li>
+               			</c:forEach>
+               		</ul>
+              	</li>
+              	
 				<li>
-				<div id="navbar" class="navbar-collapse collapse">
+					<div id="navbar" class="navbar-collapse collapse">
 						<form action="logout" class="navbar-form navbar-right">
 							<button type="submit" class="btn btn-danger">Sair</button>
 						</form>
@@ -78,7 +80,6 @@
 		</div>
 	</div>
 	</nav>
-
 
 	<div class="container">
 		<div class="row">
@@ -110,10 +111,11 @@
 									<div class="form-group">
 										<h2 align="center">Cadastrar Noticias</h2>
 										
-										<label for="titulo">Titulo:</label> <input
-											class="form-control" type="text" id="titulo" name="titulo" />
-										<br /> <label for="texto">Texto:</label> <input
-											class="form-control" type="text" id="texto" name="texto" />
+										<label for="titulo">Titulo:</label>
+										<input class="form-control" type="text" id="titulo" name="titulo" />
+										<br />
+										<label for="texto">Texto:</label>
+										<textarea class="form-control" type="text" id="texto" name="texto" rows="6"></textarea>
 										<br />
 
 										<button class="btn btn-primary" type="submit">Cadastrar</button>

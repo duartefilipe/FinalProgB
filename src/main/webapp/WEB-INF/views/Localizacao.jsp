@@ -4,17 +4,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link href="resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="resources/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <link href="navbar-fixed-top.css" rel="stylesheet">
-    <script src="resources/js/ie-emulation-modes-warning.js"></script>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="resources/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+		<link href="navbar-fixed-top.css" rel="stylesheet">
+		<script src="resources/js/ie-emulation-modes-warning.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		
 <title>Departamento de geociências</title>
+
 </head>
 <body>
 	
@@ -29,6 +31,9 @@
 	
 	<jsp:useBean id="log1" class="br.csi.modelo.dao.BolsistasDao" />
 	<c:set var="bolsistas" value="${log1.getBolsistas()}" />
+	
+	<jsp:useBean id="log4" class="br.csi.modelo.dao.SalaDao" />
+	<c:set var="sala" value="${log4.getSalas()}" />
 
 	<nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
@@ -38,31 +43,29 @@
 
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="index">Inicio</a></li>
-				<li><a href="RedSobre">Sobre</a></li>
-				<li class="dropdown">
+			<li class="active"><a href="index">Inicio</a></li>
+			<li><a href="RedSobre">Sobre</a></li>
+			<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Professores <span class="caret"></span></a>
               <ul class="dropdown-menu">
               <c:forEach var="professores" items="${professores}">
-                <li><a href="RedAlteraProf2Al?id=${professores.id}">${professores.nome}</a></li>
+                <li><a href="RedMostraProfAl?id=${professores.id}">${professores.nome}</a></li>
                </c:forEach>
                </ul>
               </li>
-              
-              				<li class="dropdown">
+              <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Funcionarios <span class="caret"></span></a>
               <ul class="dropdown-menu">
               <c:forEach var="funcionarios" items="${funcionarios}">
-                <li><a href="RedAlteraProf2Al?id=${funcionarios.id}">${funcionarios.nome}</a></li>
+                <li><a href="RedMostraFuncAl?id=${funcionarios.id}">${funcionarios.nome}</a></li>
                </c:forEach>
                </ul>
               </li>
-              
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bolsistas <span class="caret"></span></a>
               <ul class="dropdown-menu">
               <c:forEach var="bolsistas" items="${bolsistas}">
-                <li><a href="RedAlteraBol2Al?id=${bolsistas.id}">${bolsistas.nome}</a></li>
+                <li><a href="RedMostraBolAl?id=${bolsistas.id}">${bolsistas.nome}</a></li>
                </c:forEach>
                </ul>
               </li>
@@ -118,7 +121,7 @@
 										class="text-center table table-bordered table-responsive">
 										<thead>
 											<tr>
-												<h3 align="center">localização das Salas de Aula</h>
+												<h2 align="center">localização das Salas de Aula</h2>
 												<th class="text-center">Sala</th>
 												<th class="text-center">Localização</th>
 												<th class="text-center">Tipo</th>
@@ -126,36 +129,14 @@
 										</thead>
 										
 										<tbody>
-
-												<tr>
-													<td>1009</td>
-													<td>Sub-Solo</td>
-													<td>Sala de Professor</td>
+											<c:forEach var="sala" items="${sala}">
+                								<tr>
+                									<td>${sala.sala}</td>
+                									<td>${sala.pertence}</td>
+                									<td>${sala.local}</td> 
 												</tr>
+											</c:forEach>
 												
-												<tr>
-													<td>1010</td>
-													<td>Sub-Solo</td>
-													<td>Graduação</td>
-												</tr>
-												
-												<tr>
-													<td>1012</td>
-													<td>Sub-Solo</td>
-													<td>Graduação</td>
-												</tr>
-												
-												<tr>
-													<td>1020</td>
-													<td>Sub-Solo</td>
-													<td>Graduação</td>
-												</tr>
-												
-												<tr>
-													<td>1006</td>
-													<td>Térreo</td>
-													<td>Pós-Graduação</td>
-												</tr>
 										</tbody>
 										
 									</table>

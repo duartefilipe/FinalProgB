@@ -1,0 +1,21 @@
+create table usuario (id serial, login varchar(50), senha varchar(50), primary key(id));
+create table funcionario(id serial, nome varchar(90), siape varchar(50), ramal varchar(50), celular varchar(50), sala varchar(20), cpf varchar(50), identidade varchar(50), email varchar(50), primary key(id));
+create table professor(id serial, nome varchar(90), siape varchar(50), ramal varchar(50), celular varchar(50), sala varchar(20), cpf varchar(50), identidade varchar(50), email varchar(50), primary key(id));
+create table bolsista (id serial, nome varchar(50), matricula varchar(50), curso varchar(90), identidade varchar(50), celular varchar(50), email varchar(70), primary key(id));
+create table noticia (id serial, titulo varchar(90), texto text, primary key(id));
+create table sala (id serial, sala varchar(20), pertence(varchar(50), local varchar(50), primary key(id));
+
+insert into usuario values (default, 'admin', 123);
+
+insert into funcionario values (default, 'Ronaldo', 254697, 8597, 812259774, '10121A', '025.949.458-37', 8599658534, 'Ronaldo@gmail.com');
+insert into funcionario values (default, 'Elena', 856479, 6523, 99568345, '1311C', '098.584.56-58', 5632589754, 'Elena@gmail.com');
+
+insert into professor values (default, 'Romario', 569856, 8365, 98657505, '1013D', '253.658.698-65', 6589654265, 'Romario@gmail.com');
+insert into professor values (default, 'Carmen', 945896, 9563, 98564782, '1136', '253.658.698-65', 6589654265, 'Carmen@gmail.com');
+insert into professor values (default, 'Cesar', 526495, 6589, 98349139, '1136B', '225.159.456-79', 6586357159, 'Cesar@gmail.com');
+
+insert into noticia values (default, 'Chave Encontrada', 'Foi encontrada uma chave no hall do prédio 17, favor entrar em contato com a secretaria do prédio');
+
+insert into bolsista values (default, 'Pedro', 201065895, 'Engenharia da Computação', 5679461346, 98656575, 'Pedro@gmail.com');
+
+insert into sala values (default, '1106A', 'Anexo Departamento de Geociências', 'Térreo');

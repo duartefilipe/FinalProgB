@@ -57,23 +57,5 @@ public class ProfessorController {
 			}
 	}
 	
-	@RequestMapping("MostraProfessor")
-	public String MostraProfessor(Professor p, HttpServletRequest rq) throws NoSuchAlgorithmException, ClassNotFoundException, SQLException{
-		
-		ProfessorDao pD = new ProfessorDao();
-		 System.out.println("PROFESSOR no ALTERA nomeProfessor---"+p.getNome());
-		
-		
-			boolean retorno = pD.alteraProfessor(p);
-			
-			System.out.println("No Altera professor  :   "+retorno);
-			if(retorno){
-				return "ExibeProfessorAd";
-			}else{
-				rq.setAttribute("msg","problemas ao alterar professor");
-				return "erro";
-			}
-	}
-		
 		
 }	

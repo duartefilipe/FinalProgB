@@ -4,20 +4,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link href="resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="resources/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <link href="navbar-fixed-top.css" rel="stylesheet">
-    <script src="resources/js/ie-emulation-modes-warning.js"></script>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="resources/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+		<link href="navbar-fixed-top.css" rel="stylesheet">
+		<script src="resources/js/ie-emulation-modes-warning.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		
 <title>Departamento de geociências</title>
+
 </head>
 <body>
-	
+
 	<jsp:useBean id="log3" class="br.csi.modelo.dao.NoticiaDao" />
 	<c:set var="noticias" value="${log3.getNoticias()}" />
 	
@@ -29,7 +31,7 @@
 	
 	<jsp:useBean id="log1" class="br.csi.modelo.dao.BolsistasDao" />
 	<c:set var="bolsistas" value="${log1.getBolsistas()}" />
-
+	
 	<nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
 		<div class="navbar-header">
@@ -38,31 +40,29 @@
 
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="index">Inicio</a></li>
-				<li><a href="RedSobre">Sobre</a></li>
-				<li class="dropdown">
+			<li><a href="index">inicio</a></li>
+			<li><a href="RedSobre">Sobre</a></li>
+			<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Professores <span class="caret"></span></a>
               <ul class="dropdown-menu">
               <c:forEach var="professores" items="${professores}">
-                <li><a href="RedAlteraProf2Al?id=${professores.id}">${professores.nome}</a></li>
+                <li><a href="RedMostraProfAl?id=${professores.id}">${professores.nome}</a></li>
                </c:forEach>
                </ul>
               </li>
-              
-              				<li class="dropdown">
+              <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Funcionarios <span class="caret"></span></a>
               <ul class="dropdown-menu">
               <c:forEach var="funcionarios" items="${funcionarios}">
-                <li><a href="RedAlteraProf2Al?id=${funcionarios.id}">${funcionarios.nome}</a></li>
+                <li><a href="RedMostraFuncAl?id=${funcionarios.id}">${funcionarios.nome}</a></li>
                </c:forEach>
                </ul>
               </li>
-              
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bolsistas <span class="caret"></span></a>
               <ul class="dropdown-menu">
               <c:forEach var="bolsistas" items="${bolsistas}">
-                <li><a href="RedAlteraBol2Al?id=${bolsistas.id}">${bolsistas.nome}</a></li>
+                <li><a href="RedMostraBolAl?id=${bolsistas.id}">${bolsistas.nome}</a></li>
                </c:forEach>
                </ul>
               </li>
@@ -104,7 +104,7 @@
 						<div class="list-group">
 							<a class="list-group-item text text-center" style="background: #E7E7E7"> MENU </a>
 							<a href="RedForm" class="list-group-item"> Formularios </a>
-							<a href="Redlocal" class="list-group-item">Localização Salas de Aula </a>
+							<a href="Redlocal" class="list-group-item"> Localização Salas de Aula </a>
 							<a href="RedCert" class="list-group-item"> Certificados Monitoria </a>
 						</div>
 					</div>
@@ -113,40 +113,25 @@
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
 								<div class="container">
-								<h1 align="center">Bolsistas </h1>
-									<div class="thumbnail" align="center">
-										<div class="row">
-											<div class="col-md-12">
-												<section>
-								<table class="text-center table table-striped table-responsive">
-									<thead>
-										<tr>
-											<th class="text-center">Nome</th>
-											<th class="text-center">Curso</th>
-											<th class="text-center">celular</th>
-											<th class="text-center">email</th>
-										</tr>
-									</thead>
-									<tbody>
-
-										<c:forEach var="bolsistas" items="${bolsistas}">
-											<tr>
-												<td>${bolsistas.nome}</td>
-												<td>${bolsistas.curso}</td>
-												<td>${bolsistas.celular}</td>
-												<td>${bolsistas.email}</td>
-											</tr>
-										</c:forEach>
-									</tbody>
-								</table>
-
-								</section>
-							</div>
+									<form action=AlteraBolsista method="post">
+										<div class="form-group">
+											<h2 align="center">Dados de ${bol.nome}</h2>
+											<input class="form-control" type="hidden" name="id" value="${bol.id}"/>
+												<label for="nome">Nome:</label>
+												<input class="form-control" type="text" readonly="true" name="nome" value="${bol.nome}"/>
+												<br />
+												<label for="ramal">Curso:</label>
+												<input class="form-control" type="text" readonly="true" name="curso" value="${bol.curso}"/>
+												<br />
+												<label for="cpf">Email:</label>
+												<input class="form-control" type="text" readonly="true" name="email" value="${bol.email}"/>
+												<br />
+												</div>
+									</form>
+								</div>
+							</nav>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
 

@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
 		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
 		<link href="resources/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 		<link href="navbar-fixed-top.css" rel="stylesheet">
@@ -19,6 +20,7 @@
 
 </head>
 <body>
+
 	<jsp:useBean id="log3" class="br.csi.modelo.dao.NoticiaDao" />
 	<c:set var="noticias" value="${log3.getNoticias()}" />
 	
@@ -79,6 +81,7 @@
 	</div>
 	</nav>
 
+
 	<div class="container">
 		<div class="row">
 			<div class="jumbotron">
@@ -94,6 +97,10 @@
 					<div class="col-md-3">
 						<div class="list-group">
 							<a class="list-group-item text text-center" style="background: #E7E7E7"> MENU </a>
+							<a href="#" class="list-group-item"> Formularios </a>
+							<a href="Redlocal" class="list-group-item"> Localização Salas de Aula </a>
+							<a href="#" class="list-group-item"> Certificados Monitoria </a>
+							<a href="#" class="list-group-item"> relatorios </a>
 							<a href="RedCadastraNot" class="list-group-item"> Cadastrar Noticia </a>
 							<a href="RedCadastraProf" class="list-group-item"> Cadastrar Professor </a>
 							<a href="RedCadastraFunc" class="list-group-item"> Cadastrar Funcionario </a>
@@ -105,44 +112,44 @@
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
 								<div class="container">
-									<form action="CadastrarFuncionario" method="post">
-										<div class="form-group">
-											<h2 align="center">Cadastrar Funcionarios</h2>
-												<label for="nome">Nome:</label>
-												<input class="form-control" type="text" id="nome" name="nome"/>
-												<br />
-												<label for="siape">SIAPE:</label>
-												<input class="form-control" type="text" id="siape" name="siape"/>
-												<br />
-												<label for="ramal">Ramal:</label>
-												<input class="form-control" type="text" id="ramal" name="ramal"/>
-												<br />
-												<label for="celular">Celular:</label>
-												<input class="form-control" type="text" id="celular" name="celular"/>
-												<br />
-												<label for="sala">Sala:</label>
-												<input class="form-control" type="text" id="sala" name="sala"/>
-												<br />
-												<label for="cpf">CPF:</label>
-												<input class="form-control" type="text" id="cpf" name="cpf"/>
-												<br />
-												<label for="identidade">Identidade:</label>
-												<input class="form-control" type="text" id="identidade" name="idaentidade"/>
-												<br />
-												<label for="email">Email:</label>
-												<input class="form-control" type="text" id="email" name="email"/>
-												<br />
-												<button class="btn btn-primary" type="submit">Cadastrar</button>
-										</div>
-									</form>
-								</div>
-							</nav>
+								<h1 align="center">Professores </h1>
+									<div class="thumbnail" align="center">
+										<div class="row">
+											<div class="col-md-12">
+												<section>
+													<table class="text-center table table-bordered table-responsive">
+														<thead>
+															<tr>
+																<th class="text-center">Nome</th>
+																<th class="text-center">siape</th>
+																<th class="text-center">ramal</th>
+																<th class="text-center">sala</th>
+																<th class="text-center">email</th>
+															</tr>
+														</thead>
+													<tbody>
+												<c:forEach var="professores" items="${professores}">
+													<tr>
+													<td>${professores.nome}</td>
+													<td>${professores.siape}</td>
+													<td>${professores.ramal}</td>
+													<td>${professores.sala}</td>
+													<td>${professores.email}</td>
+												</tr>
+											</c:forEach>
+										</tbody>
+									</table>
+								</section>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		</div>
+		</div>
 	</div>
+</div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

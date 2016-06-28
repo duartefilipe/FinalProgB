@@ -4,17 +4,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link href="resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="resources/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <link href="navbar-fixed-top.css" rel="stylesheet">
-    <script src="resources/js/ie-emulation-modes-warning.js"></script>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+
+		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="resources/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+		<link href="navbar-fixed-top.css" rel="stylesheet">
+		<script src="resources/js/ie-emulation-modes-warning.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		
 <title>Departamento de geociências</title>
+
 </head>
 <body>
 
@@ -38,37 +41,36 @@
 
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="RedPrin">inicio</a></li>
+				<li class="active"><a href="RedPrin">Inicio</a></li>
 				<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Professores <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-              <c:forEach var="professores" items="${professores}">
-                <li><a href="RedAlteraProf2Ad?id=${professores.id}">${professores.nome}</a></li>
-               </c:forEach>
-               </ul>
-              </li>
-              
-              				<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Funcionarios <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-              <c:forEach var="funcionarios" items="${funcionarios}">
-                <li><a href="RedAlteraFunc2Ad?id=${funcionarios.id}">${funcionarios.nome}</a></li>
-               </c:forEach>
-               </ul>
-              </li>
-              
-              <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bolsistas <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-              <c:forEach var="bolsistas" items="${bolsistas}">
-                <li><a href="RedAlteraBol2Ad?id=${bolsistas.id}">${bolsistas.nome}</a></li>
-               </c:forEach>
-               </ul>
-              </li>
-	
-				<li><a href="RedNoti">Noticias</a></li>
+              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Professores <span class="caret"></span></a>
+              		<ul class="dropdown-menu">
+              			<c:forEach var="professores" items="${professores}">
+                			<li><a href="RedMostraProfAd?id=${professores.id}">${professores.nome}</a></li>
+               			</c:forEach>
+              		</ul>
+                </li>
+                
+              	<li class="dropdown">
+              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Funcionarios <span class="caret"></span></a>
+              		<ul class="dropdown-menu">
+              			<c:forEach var="funcionarios" items="${funcionarios}">
+                			<li><a href="RedMostraFuncAd?id=${funcionarios.id}">${funcionarios.nome}</a></li>
+               			</c:forEach>
+               		</ul>
+              	</li>
+              	
+              	<li class="dropdown">
+              		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bolsistas <span class="caret"></span></a>
+              		<ul class="dropdown-menu">
+              			<c:forEach var="bolsistas" items="${bolsistas}">
+                			<li><a href="RedMostraBolAd?id=${bolsistas.id}">${bolsistas.nome}</a></li>
+               			</c:forEach>
+               		</ul>
+              	</li>
+              	
 				<li>
-				<div id="navbar" class="navbar-collapse collapse">
+					<div id="navbar" class="navbar-collapse collapse">
 						<form action="logout" class="navbar-form navbar-right">
 							<button type="submit" class="btn btn-danger">Sair</button>
 						</form>
@@ -78,7 +80,6 @@
 		</div>
 	</div>
 	</nav>
-
 
 	<div class="container">
 		<div class="row">
@@ -106,61 +107,45 @@
 						<div class="list-group">
 							<nav class="navbar navbar-default navbar-static-top">
 								<div class="container">
-								<h1 align="center">Funcionarios </h1>
-									<div class="thumbnail" align="center">
-										<div class="row">
-											<div class="col-md-12">
-												<section>
-												<style>
-													table {
-													table-layout: fixed;
-													word-wrap: break-word;
-													}
-													</style>
-								<table class="text-center table table-striped table-responsive">
-									<thead>
-										<tr>
-											<th class="text-center">Nome</th>
-											<th class="text-center">siape</th>
-											<th class="text-center">ramal</th>
-											<th class="text-center">celular</th>
-											<th class="text-center">sala</th>
-											<th class="text-center">cpf</th>
-											<th class="text-center">RG</th>
-											<th class="text-center">email</th>
-											<th class="text-center">alterar</th>
-											<th class="text-center">deletar</th>
-										</tr>
-									</thead>
-									<tbody>
-
-										<c:forEach var="funcionarios" items="${funcionarios}">
-											<tr>
-												<td>${funcionarios.nome}</td>
-												<td>${funcionarios.siape}</td>
-												<td>${funcionarios.ramal}</td>
-												<td>${funcionarios.celular}</td>
-												<td>${funcionarios.sala}</td>
-												<td>${funcionarios.cpf}</td>
-												<td>${funcionarios.identidade}</td>
-												<td>${funcionarios.email}</td>
-												<td><a class="btn btn-success btn-sm glyphicon glyphicon-refresh" href="RedAlteraFunc?id=${funcionarios.id}"></a></td>
-												<td><a class="btn btn-danger  btn-sm btn btn-success btn-sm glyphicon glyphicon-remove" href="RemoverFuncionario?id=${funcionarios.id}"></a></td>
-											</tr>
-										</c:forEach>
-									</tbody>
-								</table>
-
-								</section>
+									<form action=AlteraFuncionario method="post">
+										<div class="form-group">
+											<h2 align="center">Dados de ${func.nome}</h2>
+											<input class="form-control" type="hidden" name="id" value="${func.id}"/>
+											<label for="nome">Nome:</label>
+											<input class="form-control" type="text" name="nome" value="${func.nome}"/>										
+											<br />
+											<label for="nome">SIAPE:</label>
+											<input class="form-control" type="text" name="siape" value="${func.siape}"/>										
+											<br />
+											<label for="ramal">Ramal:</label>
+											<input class="form-control" type="text" name="ramal" value="${func.ramal}" />
+											<br>
+											<label for="ramal">Celular:</label>
+											<input class="form-control" type="text" name="celular" value="${func.celular}" />
+											<br>
+											<label for="sala">Sala:</label>
+											<input class="form-control" type="text" name="sala" value="${func.sala}" />
+											<br />
+											<label for="sala">CPF:</label>
+											<input class="form-control" type="text" name="cpf" value="${func.cpf}" />
+											<br />
+											<label for="sala">RG:</label>
+											<input class="form-control" type="text" name="identidade" value="${func.identidade}" />
+											<br />
+											<label for="email">Email:</label>
+											<input class="form-control" type="text" name="email" value="${func.email}" />
+											<button class="btn btn-primary" type="submit">Alterar</button>
+											<a class="btn btn-danger" href="RemoverFuncionario?id=${func.id}">Deletar</a>
+										<br />
+									</div>
+								</form>
 							</div>
-						</div>
+						</nav>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

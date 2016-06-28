@@ -136,7 +136,7 @@ public class RedirectController {
 		return "AlterarProfessor";
 	}
 	
-	@RequestMapping("RedAlteraProf2Ad")
+	@RequestMapping("RedMostraProfAd")
 	public String redirectMostraProfessor(HttpServletRequest rq) throws ClassNotFoundException, SQLException{
 		
 		int id =  Integer.parseInt(rq.getParameter("id"));
@@ -150,10 +150,10 @@ public class RedirectController {
 		
 		System.out.println("NOME PROFESSOR NO REDIRECT-----------"+p.getNome());
 		rq.setAttribute("prof", p);
-		return "ExibeProfessorAd";
+		return "ProfessoresAd";
 	}
 	
-	@RequestMapping("RedAlteraProf2Al")
+	@RequestMapping("RedMostraProfAl")
 	public String redirectMostraProfessor2(HttpServletRequest rq) throws ClassNotFoundException, SQLException{
 		
 		int id =  Integer.parseInt(rq.getParameter("id"));
@@ -167,7 +167,7 @@ public class RedirectController {
 		
 		System.out.println("NOME PROFESSOR NO REDIRECT-----------"+p.getNome());
 		rq.setAttribute("prof", p);
-		return "ExibeProfessorAl";
+		return "ProfessoresAl";
 	}
 	
 	//--------------------------professor----------------------------------------------------------------
@@ -196,7 +196,7 @@ public class RedirectController {
 		return "AlterarFuncionario";
 	}
 	
-	@RequestMapping("RedAlteraFunc2Ad")
+	@RequestMapping("RedMostraFuncAd")
 	public String redirectMostraFuncionario(HttpServletRequest rq) throws ClassNotFoundException, SQLException{
 		
 		int id =  Integer.parseInt(rq.getParameter("id"));
@@ -210,10 +210,10 @@ public class RedirectController {
 		
 		System.out.println("NOME FUNCIONARIO NO REDIRECT-----------"+f.getNome());
 		rq.setAttribute("func", f);
-		return "ExibeFuncionarioAd";
+		return "FuncionariosAd";
 	}
 	
-	@RequestMapping("RedAlteraFunc2Al")
+	@RequestMapping("RedMostraFuncAl")
 	public String redirectMostraFuncionario2(HttpServletRequest rq) throws ClassNotFoundException, SQLException{
 		
 		int id =  Integer.parseInt(rq.getParameter("id"));
@@ -227,7 +227,7 @@ public class RedirectController {
 		
 		System.out.println("NOME FUNCIONARIO NO REDIRECT-----------"+f.getNome());
 		rq.setAttribute("func", f);
-		return "ExibeFuncionarioAl";
+		return "FuncionariosAl";
 	}
 	
 	//-----------------------------------------funcionario------------------------------------------------
@@ -255,7 +255,7 @@ public class RedirectController {
 			return "AlterarBolsista";
 		}
 		
-		@RequestMapping("RedAlteraBol2Ad")
+		@RequestMapping("RedMostraBolAd")
 		public String redirectMostraBolsista(HttpServletRequest rq) throws ClassNotFoundException, SQLException{
 			
 			int id =  Integer.parseInt(rq.getParameter("id"));
@@ -269,10 +269,10 @@ public class RedirectController {
 			
 			System.out.println("NOME bolsista NO REDIRECT-----------"+b.getNome());
 			rq.setAttribute("bol", b);
-			return "ExibeBolsistaAd";
+			return "BolsistasAd";
 		}
 		
-		@RequestMapping("RedAlteraBol2Al")
+		@RequestMapping("RedMostraBolAl")
 		public String redirectMostraBolsista2(HttpServletRequest rq) throws ClassNotFoundException, SQLException{
 			
 			int id =  Integer.parseInt(rq.getParameter("id"));
@@ -286,7 +286,7 @@ public class RedirectController {
 			
 			System.out.println("NOME bolsista NO REDIRECT-----------"+b.getNome());
 			rq.setAttribute("bol", b);
-			return "ExibeBolsistaAl";
+			return "BolsistasAl";
 		}
 		
 		//-----------------------------------------bolsista------------------------------------------------

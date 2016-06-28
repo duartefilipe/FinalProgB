@@ -4,6 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
 		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
 		<link href="resources/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 		<link href="navbar-fixed-top.css" rel="stylesheet">
@@ -19,7 +20,6 @@
 
 </head>
 <body>
-	
 	<jsp:useBean id="log3" class="br.csi.modelo.dao.NoticiaDao" />
 	<c:set var="noticias" value="${log3.getNoticias()}" />
 	
@@ -31,57 +31,47 @@
 	
 	<jsp:useBean id="log1" class="br.csi.modelo.dao.BolsistasDao" />
 	<c:set var="bolsistas" value="${log1.getBolsistas()}" />
-
+	
 	<nav class="navbar navbar-default navbar-static-top">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="index">Dpto Geociências</a>
-			</div>
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="RedPrin">Dpto Geociências</a>
+		</div>
 
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="index">Inicio</a></li>
-				<li><a href="RedSobre">Sobre</a></li>
+				<li class="active"><a href="RedPrin">Inicio</a></li>
 				<li class="dropdown">
               		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Professores <span class="caret"></span></a>
-              			<ul class="dropdown-menu">
-              				<c:forEach var="professores" items="${professores}">
-                				<li><a href="RedMostraProfAl?id=${professores.id}">${professores.nome}</a></li>
-               				</c:forEach>
-              			</ul>
+              		<ul class="dropdown-menu">
+              			<c:forEach var="professores" items="${professores}">
+                			<li><a href="RedMostraProfAd?id=${professores.id}">${professores.nome}</a></li>
+               			</c:forEach>
+              		</ul>
                 </li>
                 
               	<li class="dropdown">
               		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Funcionarios <span class="caret"></span></a>
-              			<ul class="dropdown-menu">
-              				<c:forEach var="funcionarios" items="${funcionarios}">
-                				<li><a href="RedMostraFuncAl?id=${funcionarios.id}">${funcionarios.nome}</a></li>
-               				</c:forEach>
-               			</ul>
+              		<ul class="dropdown-menu">
+              			<c:forEach var="funcionarios" items="${funcionarios}">
+                			<li><a href="RedMostraFuncAd?id=${funcionarios.id}">${funcionarios.nome}</a></li>
+               			</c:forEach>
+               		</ul>
               	</li>
               	
               	<li class="dropdown">
               		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bolsistas <span class="caret"></span></a>
-              			<ul class="dropdown-menu">
-              				<c:forEach var="bolsistas" items="${bolsistas}">
-                				<li><a href="RedMostraBolAl?id=${bolsistas.id}">${bolsistas.nome}</a></li>
-               				</c:forEach>
-               			</ul>
+              		<ul class="dropdown-menu">
+              			<c:forEach var="bolsistas" items="${bolsistas}">
+                			<li><a href="RedMostraBolAd?id=${bolsistas.id}">${bolsistas.nome}</a></li>
+               			</c:forEach>
+               		</ul>
               	</li>
               	
 				<li>
 					<div id="navbar" class="navbar-collapse collapse">
-						<form action="login" class="navbar-form navbar-right">
-							<div class="form-group">
-								<input class="form-control" type="text" id="login" placeholder="Nome" name="login" placeholder="Informe o seu nome" />
-							</div>
-							
-							<div class="form-group">
-								<input class="form-control" type="password" placeholder="Senha" id="senha" name="senha" />
-							</div>
-							
-							<button type="submit" class="btn btn-success">Logar</button>
-							
+						<form action="logout" class="navbar-form navbar-right">
+							<button type="submit" class="btn btn-danger">Sair</button>
 						</form>
 					</div>
 				</li>
@@ -97,41 +87,55 @@
 					<div class="container">
 						<div class="row">
 							<div align="center">
-								<img class="img-responsive" src="http://w3.ufsm.br/ccne/images/ccne_logo.png">
+								<img class="img-responsive"
+									src="http://w3.ufsm.br/ccne/images/ccne_logo.png">
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3">
 						<div class="list-group">
 							<a class="list-group-item text text-center" style="background: #E7E7E7"> MENU </a>
-							<a href="RedForm" class="list-group-item"> Formularios </a>
-							<a href="Redlocal" class="list-group-item">Localização Salas de Aula </a>
-							<a href="RedCert" class="list-group-item"> Certificados Monitoria </a>
+							<a href="#" class="list-group-item"> Formularios </a>
+							<a href="Redlocal" class="list-group-item"> Localização Salas de Aula </a>
+							<a href="#" class="list-group-item"> Certificados Monitoria </a>
+							<a href="#" class="list-group-item"> relatorios </a>
+							<a href="RedCadastraNot" class="list-group-item"> Cadastrar Noticia </a>
+							<a href="RedCadastraProf" class="list-group-item"> Cadastrar Professor </a>
+							<a href="RedCadastraFunc" class="list-group-item"> Cadastrar Funcionario </a>
+							<a href="RedCadastraBol" class="list-group-item"> Cadastrar Bolsista</a>
 						</div>
 					</div>
 
-					<!-- style="z-index: 100" -->
-
-				<div class="col-md-9" style="z-index: 100">
-					<div class="list-group">
-						<nav class="navbar navbar-default navbar-static-top">
-						<div class="container">
-							<h1 align="center">Noticias</h1>
-								<div class="row">
-									<div class="col-md-12">
-										<section>
-											<tbody>
-												<c:forEach var="noticias" items="${noticias}">
-													<div class="thumbnail text text-center table-responsive">
-														<h3>${noticias.titulo}</h3>
-														<hr>
-														<p>${noticias.texto}</p>
-													</div>
-												</c:forEach>
-											</tbody>
-										</section>
-									</div>
-								</div>
+					<div class="col-md-9">
+						<div class="list-group">
+							<nav class="navbar navbar-default navbar-static-top">
+								<div class="container">
+								<h1 align="center">Bolsistas </h1>
+									<div class="thumbnail" align="center">
+										<div class="row">
+											<div class="col-md-12">
+												<section>
+													<table class="text-center table table-bordered table-responsive">
+														<thead>
+															<tr>
+																<th class="text-center">Nome</th>
+																<th class="text-center">celular</th>
+																<th class="text-center">curso</th>
+																<th class="text-center">email</th>
+															</tr>
+														</thead>
+													<tbody>
+												<c:forEach var="bolsistas" items="${bolsistas}">
+													<tr>
+													<td>${bolsistas.nome}</td>
+													<td>${bolsistas.celular}</td>
+													<td>${bolsistas.curso}</td>
+													<td>${bolsistas.email}</td>
+												</tr>
+											</c:forEach>
+										</tbody>
+									</table>
+								</section>
 							</div>
 						</div>
 					</div>
@@ -139,9 +143,15 @@
 			</div>
 		</div>
 	</div>
+</div>
+</div>
+</div>
 
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/bootstrap.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
 </body>
 </html>
+
+
+
